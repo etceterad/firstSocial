@@ -8,6 +8,7 @@ import HomePage from '../home/homePage';
 import AboutUsPage from '../aboutUs/aboutUsPage';
 import PortfolioPage from '../portfolio/portfolioPage';
 import FaqPage from '../faq/faqPage';
+import PricingPage from '../pricing/pricingPage';
 
 import '../../css/style.css';
 import '../../css/all.min.css';
@@ -15,7 +16,6 @@ import '../../css/bootstrap.min.css';
 import '../../css/mega_menu.css';
 import '../../css/ionicons.min.css';
 import '../../css/owl.carousel.min.css'
-import '../../css/magnific-popup.css';
 import '../../css/menu_menu_reset.min.css';
 import '../../css/responsive.css';
 import '../../css/owl.carousel.min.css';
@@ -34,6 +34,7 @@ const App = () => {
                 <Route path="/about-us"><AboutUsPage /></Route>
                 <Route path="/portfolio"><PortfolioPage /></Route>
                 <Route path="/faq"><FaqPage /></Route>
+                <Route path="/pricing"><PricingPage /></Route>
             </Switch> 
         </Router>
     )
