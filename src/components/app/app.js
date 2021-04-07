@@ -7,6 +7,7 @@ import {
 import HomePage from '../home/homePage';
 import AboutUsPage from '../aboutUs/aboutUsPage';
 import PortfolioPage from '../portfolio/portfolioPage';
+import FaqPage from '../faq/faqPage';
 
 import '../../css/style.css';
 import '../../css/all.min.css';
@@ -32,6 +33,7 @@ const App = () => {
                  </Route>
                 <Route path="/about-us"><AboutUsPage /></Route>
                 <Route path="/portfolio"><PortfolioPage /></Route>
+                <Route path="/faq"><FaqPage /></Route>
             </Switch> 
         </Router>
     )

@@ -28,16 +28,16 @@ const HeaderNav = () => {
                                     <Link to="/about-us">About us</Link>
                                 </li>
                                 <li>
-                                    <a href="/portfolio">Portfolio</a>
+                                    <Link to="/portfolio">Portfolio</Link>
                                 </li>
                                 <li>
-                                    <a href="/faq">FAQ</a>
+                                    <Link to="/faq">FAQ</Link>
                                 </li>
                                 <li>
-                                    <a href="/pricing">Pricing</a>
+                                    <Link to="/pricing">Pricing</Link>
                                 </li>
                                 <li>
-                                        <a href="/contact-us">Contact us</a>
+                                        <Link to="/contact-us">Contact us</Link>
                                 </li>
                             </ul>
                             <ul className="menu-sidebar">
