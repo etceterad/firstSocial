@@ -10,6 +10,8 @@ import SixthImg from './images/06.jpg';
 import SeventhImg from './images/07.jpg';
 import EighthImg from './images/08.jpg';
 
+import '../../../css/style.css';
+
 export default class DoneProjects extends React.Component {
     render() {
         return(

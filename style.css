@@ -127,7 +127,7 @@ header {
 }
 
 header .container-fluid {
-	padding: 0 120px;
+	padding: 0 110px;
 }
 
 header .mega-menu> .menu-list-items {
@@ -2228,11 +2228,6 @@ footer .fshap-after {
 	margin: 0 auto;
 	position: relative;
 	background: url('../images/footer/5.jpg')no-repeat 0 bottom;
-}
-
-
-.pattern-right{
-	padding: 0 30px!important;
 }
 
 .footer .social-media {

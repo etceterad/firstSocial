@@ -1,9 +1,13 @@
 import React from 'react';
-import Header from '../header';
-import Offer from '../offer';
-import MainContent from '../mainContent';
-import Footer from '../footer';
-// import { BrowserRouter as Router, Route} from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+  } from "react-router-dom";
+import HomePage from '../home/homePage';
+import AboutUsPage from '../aboutUs/aboutUsPage';
+import PortfolioPage from '../portfolio/portfolioPage';
+
 import '../../css/style.css';
 import '../../css/all.min.css';
 import '../../css/bootstrap.min.css';
@@ -21,12 +25,15 @@ import '../../css/wow.css';
 
 const App = () => {
     return (
-        <>
-            <Header/>
-            <Offer />
-            <MainContent />
-            <Footer />
-        </>
+        <Router>
+            <Switch>
+                <Route path="/" exact>
+                    <HomePage />
+                 </Route>
+                <Route path="/about-us"><AboutUsPage /></Route>
+                <Route path="/portfolio"><PortfolioPage /></Route>
+            </Switch> 
+        </Router>
     )
 }
 

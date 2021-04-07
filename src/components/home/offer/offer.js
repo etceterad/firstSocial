@@ -1,31 +1,28 @@
 import React from 'react';
-import $ from 'jquery';
 import Background13 from './images/13.png';
 import OfferSubscribersImg from './images/5.png';
 import OfferLikesImg from './images/06.png';
 import OfferViewsImg from './images/08.png';
 
 export default class Offer extends React.Component {
-    // constructor() {
-    //     super()
+    constructor(props) {
+        super(props)
+         this.state = {
+            toggleState: 1
+         }
 
-    //     this.initTabs = this.initTabs.bind(this);
-    // }
+        // this.toggleTabs = this.toggleTabs.bind(this);
+    }
 
-    // componentDidMount() {
-    //     this.initTabs();
-    // }
-
-    // initTabs() {
-    //     $('ul.about-us').on('click', 'li:not(.active)', (e) => {
-    //         e.preventDefault();
-    //       $(this)
-    //         .addClass('active').siblings().removeClass('active')
-    //         .closest('.main-form__content').find('div.main-form__tab').removeClass('active-tab').eq($(this).index()).addClass('active-tab');
-    //     });
-    // }
+    toggleTabs(index) {
+        this.setState({
+            toggleState: index
+        })
+        console.log(index)
+    }
 
     render() {
+        
         return (
             <div className="main-form">
                 <div className="left-img"><img src={Background13} className="img-fluid" alt="offer" /></div>
@@ -44,14 +41,14 @@ export default class Offer extends React.Component {
                             <div className="row">
                                 <div className="col-sm-12">
                                     <ul className="about-us text-center list-inline">
-                                        <li className="list-inline-item"><a href="#" className="active"><span>Subscribers</span></a></li>
-                                        <li className="list-inline-item"><a href="#"><span>Likes</span></a></li>
-                                        <li className="list-inline-item"><a href="#"><span>Views</span></a></li>
+                                        <li className="list-inline-item"><a href="##" onClick={() => this.toggleTabs(1)} className={this.state.toggleState === 1 ? "active" : ""}><span>Subscribers</span></a></li>
+                                        <li className="list-inline-item"><a href="##" onClick={() => this.toggleTabs(2)} className={this.state.toggleState === 2 ? "active" : ""}><span>Likes</span></a></li>
+                                        <li className="list-inline-item"><a href="##" onClick={() => this.toggleTabs(3)} className={this.state.toggleState === 3 ? "active" : ""}><span>Views</span></a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div className="main-form__tab active-tab">
+                        <div className={this.state.toggleState === 1 ? "main-form__tab active-tab" : "main-form__tab"}>
                             <div className="main-form__tab-calculate wow fadeInLeft">
                                 <h3 className="main-form__calculate-title">
                                 You want Subscribers?
@@ -74,7 +71,7 @@ export default class Offer extends React.Component {
                                 <img src={OfferSubscribersImg} alt="img" />
                             </div>
                         </div>
-                        <div className="main-form__tab">
+                        <div className={this.state.toggleState === 2 ? "main-form__tab active-tab" : "main-form__tab"}>
                             <div className="main-form__tab-calculate wow fadeInLeft">
                                 <h3 className="main-form__calculate-title">
                                 You want Likes?
@@ -97,7 +94,7 @@ export default class Offer extends React.Component {
                                 <img src={OfferLikesImg} alt="img" />
                             </div>
                         </div>
-                        <div className="main-form__tab">
+                        <div className={this.state.toggleState === 3 ? "main-form__tab active-tab" : "main-form__tab"}>
                             <div className="main-form__tab-calculate wow fadeInLeft">
                                 <h3 className="main-form__calculate-title">
                                 You want Views?

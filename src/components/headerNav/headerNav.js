@@ -14,7 +14,7 @@ const HeaderNav = () => {
                         <div className="col-sm-12">
                             <ul className="menu-logo">
                                 <li>
-                                    <a href="index.html"><img src={logo} alt="logo" className="img-fluid pr-4" /></a>
+                                    <Link to="/"><img src={logo} alt="logo" className="img-fluid pr-4" /></Link>
                                 </li>
                             </ul>
                             <ul class="menu-contact">
@@ -22,22 +22,22 @@ const HeaderNav = () => {
                             </ul>
                             <ul className="menu-links">
                                 <li >
-                                    <a href="/" className="active">Home</a>
+                                    <Link to="/" className="active">Home</Link>
                                 </li>
                                 <li>
-                                    <a href="about-us.html">About us</a>
+                                    <Link to="/about-us">About us</Link>
                                 </li>
                                 <li>
-                                    <a href="portfolio.html">Portfolio</a>
+                                    <a href="/portfolio">Portfolio</a>
                                 </li>
                                 <li>
-                                    <a href="faq.html">FAQ</a>
+                                    <a href="/faq">FAQ</a>
                                 </li>
                                 <li>
-                                    <a href="pricing.html">Pricing</a>
+                                    <a href="/pricing">Pricing</a>
                                 </li>
                                 <li>
-                                        <a href="contact-us.html">Contact us</a>
+                                        <a href="/contact-us">Contact us</a>
                                 </li>
                             </ul>
                             <ul className="menu-sidebar">
