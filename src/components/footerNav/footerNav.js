@@ -19,7 +19,6 @@ export default class FooterNav extends React.Component {
                     <h5 className="iq-fw-7 ">Information</h5>
                     <ul className="list-inline">
                         <li className="list-item"><Link to="/pricing">Pricing</Link></li>
-                        <li className="list-item"><Link to="/client">Customers</Link></li>
                         <li className="list-item"><Link to="/portfolio">Portfolio</Link></li>
                         <li className="list-item"><Link to="/privacy-policy">Privacy Policy</Link></li>
                         <li className="list-item"><Link to="/service">Our Benefits</Link></li>

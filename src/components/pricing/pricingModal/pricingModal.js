@@ -8,7 +8,7 @@ const PricingModal = ({active, setActive, name, setName, price, setPrice}) => {
         setTimeout(() => {
             setName("");
             setPrice("");
-        }, 1000);
+        }, 600);
     }
 
     return(

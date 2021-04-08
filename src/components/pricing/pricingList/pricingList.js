@@ -229,13 +229,13 @@ const PricingList = () =>{
                 </div>
             </div>
             <PricingModal
-            active={modalActive}
-            setActive={setModalActive}
-            name={nameActive}
-            setName={setNameActive}
-            price={priceActive}
-            setPrice={setPriceActive}
-               />
+                active={modalActive}
+                setActive={setModalActive}
+                name={nameActive}
+                setName={setNameActive}
+                price={priceActive}
+                setPrice={setPriceActive}
+            />
         </section>
         )
 }

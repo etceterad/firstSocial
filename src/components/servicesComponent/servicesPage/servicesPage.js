@@ -1,28 +1,29 @@
 import React from 'react';
-import Offer from '../../offer';
 import Header from '../../header';
-import OurServices from '../../ourServices';
-import AboutUsInfo from '../aboutUsInfo';
 import Footer from '../../footer';
+import Offer from '../../offer';
+import ServicesAbout from '../servicesAbout';
+import ServicesSolutions from '../servicesSolutions';
+import OurServices from '../../ourServices';
 
-export default class AboutUsPage extends React.Component {
+export default class ServicesPage extends React.Component {
     constructor(props){
         super(props)
 
         this.state = {
-            titleActive: "About Us",
-            activeId: 2
+            titleActive: "Service"
         }
     }
 
     render() {
         return(
             <>
-                <Header active={this.state.activeId} />
+                <Header />
                 <Offer titleActive={this.state.titleActive} />
                 <div className="main-content">
+                    <ServicesAbout />
+                    <ServicesSolutions />
                     <OurServices />
-                    <AboutUsInfo />
                 </div>
                 <Footer />
             </>
