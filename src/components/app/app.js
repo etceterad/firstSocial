@@ -9,6 +9,7 @@ import AboutUsPage from '../aboutUs/aboutUsPage';
 import PortfolioPage from '../portfolio/portfolioPage';
 import FaqPage from '../faq/faqPage';
 import PricingPage from '../pricing/pricingPage';
+import ContactUsPage from '../contactUs/contactUsPage';
 
 import '../../css/style.css';
 import '../../css/all.min.css';
@@ -24,6 +25,7 @@ import '../../css/typography.css';
 import '../../css/wow.css';
 
 
+
 const App = () => {
     return (
         <Router>
@@ -35,6 +37,7 @@ const App = () => {
                 <Route path="/portfolio"><PortfolioPage /></Route>
                 <Route path="/faq"><FaqPage /></Route>
                 <Route path="/pricing"><PricingPage /></Route>
+                <Route patch="/contact-us"><ContactUsPage /></Route>
             </Switch> 
         </Router>
     )
