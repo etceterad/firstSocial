@@ -60,6 +60,12 @@ Header
 html {
   scroll-behavior: smooth;
 }
+
+body {
+	overflow-x: hidden!important;
+	position: relative;
+}
+
 header .main-header {
 	padding: 30px 150px;
 	position: absolute;
@@ -539,6 +545,26 @@ header.header-four .mega-menu.desktopTopFixed .menu-list-items, header.header-fo
 	-webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
 	box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+}
+
+.header-hamburger {
+	visibility: hidden;
+	left: 85%;
+	position: absolute;
+	top: 0%;
+	transition: all 0.4s ease;
+}
+
+.header-hamburger-close {
+	visibility: hidden;
+	left: 85%;
+	position: absolute;
+	top: 0%;
+	transition: all 0.4s ease;
+}
+
+.hidden-btn{
+	visibility: hidden!important;
 }
 
 /*------------------

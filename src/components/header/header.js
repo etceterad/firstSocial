@@ -1,8 +1,52 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import LogoExmpl from '../headerNav/logoExmpl.png';
+import HeaderHamburger from '../../images/tiktokfans-hamburger.png';
+import HeaderHamburgerClose from '../../images/tiktokfans-close.png';
 
 export default class Header extends React.Component {
+    constructor() {
+        super()
+
+        this.state = {
+            activeMenu: false,
+            hiddenButton: true
+        }
+    }
+
+    setActiveMenu() {
+        this.setState({
+            activeMenu: true
+        })
+    }
+
+    resetActiveMenu() {
+        this.setState ({
+            activeMenu: false
+        })
+    }
+
+    setHiddenButton() {
+        this.setState({
+            hiddenButton: false
+        })
+    }
+
+    resetHiddenButton() {
+        this.setState({
+            hiddenButton: true
+        })
+    }
+
+    functionForHamburger() {
+        this.setActiveMenu();
+        this.setHiddenButton();
+    }
+
+    functionForHamburgerClose() {
+        this.resetHiddenButton();
+        this.resetActiveMenu();
+    }
     
     render() {
         const {active} = this.props;
@@ -20,10 +64,16 @@ export default class Header extends React.Component {
                                                 <Link to="/"><img src={LogoExmpl} alt="logo" className="img-fluid" /></Link>
                                             </li>
                                             </ul>
+                                            <a href="##" onClick={() => this.functionForHamburgerClose()}>
+                                                <img className={this.state.hiddenButton ? "header-hamburger-close hidden-btn" : "header-hamburger-close"} src={HeaderHamburgerClose} alt="hamburger-close"/>
+                                            </a>
+                                            <a href="##" onClick={() => this.functionForHamburger()}>
+                                                <img className={this.state.hiddenButton ? "header-hamburger" : "header-hamburger hidden-btn"} src={HeaderHamburger} alt="hamburger"/>
+                                            </a>
                                             <ul className="menu-search-bar">
                                             <li className="menu-contact iq-fw-5"><a href="tel:0123456789" ><i className="fas fa-phone pr-1 "></i> 0 123 456 789</a></li>
                                             </ul>
-                                            <ul className="menu-links">
+                                            <ul className={this.state.activeMenu ? "menu-links active-menu" : "menu-links"}>
                                             <li >
                                                 <Link to="/">Home</Link>
                                             </li>
