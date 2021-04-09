@@ -709,6 +709,25 @@ header.header-four  .container-fluid {
 		padding-top: 15px;
 	}
 
+	header .mega-menu .menu-links {
+		visibility: hidden;
+		-moz-transform: translate(1000px, 0px);
+		-webkit-transform: translate(1000px, 0px);
+		-o-transform: translate(1000px, 0px);
+		-ms-transform: translate(1000px, 0px);
+		transform: translate(1000px, 0px);
+		transition: all 1s ease;
+	}
+
+	header .mega-menu .active-menu {
+		-moz-transform: translate(-0, 0px);
+		-webkit-transform: translate(0, 0px);
+		-o-transform: translate(0, 0px);
+		-ms-transform: translate(0, 0px);
+		transform: none;
+		visibility: visible;
+	}
+
 	.iq-rocket {
     position: absolute;
     top: -12%;
@@ -1367,6 +1386,25 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 		left: 21%;
 	}
 
+	header .mega-menu .menu-links {
+		visibility: hidden;
+		-moz-transform: translate(1000px, 0px);
+		-webkit-transform: translate(1000px, 0px);
+		-o-transform: translate(1000px, 0px);
+		-ms-transform: translate(1000px, 0px);
+		transform: translate(1000px, 0px);
+		transition: all 1s ease;
+	}
+
+	header .mega-menu .active-menu {
+		-moz-transform: translate(-0, 0px);
+		-webkit-transform: translate(0, 0px);
+		-o-transform: translate(0, 0px);
+		-ms-transform: translate(0, 0px);
+		transform: none;
+		visibility: visible;
+	}
+
 	#iq-tab .tab-content {
 		margin-top: 50px;
 	}
@@ -1734,6 +1772,25 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 		margin-top: 0;
 	}
 
+	header .mega-menu .menu-links {
+		visibility: hidden;
+		-moz-transform: translate(800px, 0px);
+		-webkit-transform: translate(800px, 0px);
+		-o-transform: translate(800px, 0px);
+		-ms-transform: translate(800px, 0px);
+		transform: translate(800px, 0px);
+		transition: all 1s ease;
+	}
+
+	header .mega-menu .active-menu {
+		-moz-transform: translate(-0, 0px);
+		-webkit-transform: translate(0, 0px);
+		-o-transform: translate(0, 0px);
+		-ms-transform: translate(0, 0px);
+		transform: none;
+		visibility: visible;
+	}
+
 	.footer-top {
 		padding: 60px 0 100px;
 	}
@@ -1915,10 +1972,6 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 		padding: 0 15px;
 	}
 
-	header .mega-menu .menu-search-bar {
-		right: 70px;
-	}
-
 	header .mega-menu .menu-search-bar input:focus {
 		max-width: 180px;
 	}
@@ -1928,9 +1981,24 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 		width: 30px;
 		line-height: 30px;
 	}
+	
+	header .mega-menu .menu-links {
+		visibility: hidden;
+		-moz-transform: translate(500px, 0px);
+		-webkit-transform: translate(500px, 0px);
+		-o-transform: translate(500px, 0px);
+		-ms-transform: translate(500px, 0px);
+		transform: translate(500px, 0px);
+		transition: all 1s ease;
+	}
 
-	header .mega-menu .menu-search-bar input {
-		height: 30px;
+	header .mega-menu .active-menu {
+		-moz-transform: translate(-0, 0px);
+		-webkit-transform: translate(0, 0px);
+		-o-transform: translate(0, 0px);
+		-ms-transform: translate(0, 0px);
+		transform: none;
+		visibility: visible;
 	}
 
 	footer .form-control {

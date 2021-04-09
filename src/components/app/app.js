@@ -27,8 +27,6 @@ import '../../css/typography.css';
 import '../../css/wow.css';
 
 
-
-
 const App = () => {
     return (
         <Router>
