@@ -12,6 +12,9 @@ import PricingPage from '../pricing/pricingPage';
 import ContactUsPage from '../contactUs/contactUsPage';
 import ServicesPage from '../servicesComponent/servicesPage';
 import PrivacyPolicyPage from '../privacyPolicy/privacyPolicyPage';
+import ScrollToTop from '../scrollToTop';
+import Preloader from '../preloader';
+
 
 import '../../css/style.css';
 import '../../css/all.min.css';
@@ -27,23 +30,27 @@ import '../../css/typography.css';
 import '../../css/wow.css';
 
 
-const App = () => {
-    return (
-        <Router>
-            <Switch>
-                <Route path="/" exact>
+export default class App extends React.Component {
+
+    render() {
+        return (
+            <Router>
+                <ScrollToTop>
+                    <Switch location={this.props.location}>
+                    <Route path="/" exact>
                     <HomePage />
-                 </Route>
-                <Route path="/about-us"><AboutUsPage /></Route>
-                <Route path="/portfolio"><PortfolioPage /></Route>
-                <Route path="/faq"><FaqPage /></Route>
-                <Route path="/pricing"><PricingPage /></Route>
-                <Route path="/contact-us"><ContactUsPage /></Route>
-                <Route path="/service"><ServicesPage /></Route>
-                <Route path="/privacy-policy"><PrivacyPolicyPage /></Route>
-            </Switch> 
-        </Router>
-    )
+                    </Route>
+                    <Route path="/about-us" render={(props) => {return <AboutUsPage />}}></Route>
+                    <Route path="/portfolio"><PortfolioPage /></Route>
+                    <Route path="/faq"><FaqPage /></Route>
+                    <Route path="/pricing"><PricingPage /></Route>
+                    <Route path="/contact-us"><ContactUsPage /></Route>
+                    <Route path="/service"><ServicesPage /></Route>
+                    <Route path="/privacy-policy"><PrivacyPolicyPage /></Route>
+                    </Switch> 
+                </ScrollToTop>
+            </Router>
+        )
+    }
 }
 
-export default App;

@@ -7,7 +7,7 @@ export default class ServicesSolutions extends React.Component {
             <section className="iq-solutions position-relative pt-0">
             <div className="container">
                <div className="row no-gutters">
-                  <div className="col-lg-6 align-self-center">
+                  <div className="col-lg-6 align-self-center wow fadeInLeft">
                      <h2 className="iq-fw-8 mb-2">Our Best Marketing Solutions</h2>
                      <p className="mb-3">Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,Lorem Ipsum.lorem quis bibendum auctor.</p>
                     <ul className="listing-mark">
@@ -17,7 +17,7 @@ export default class ServicesSolutions extends React.Component {
                                 <li>Ipsum has been the industry's standard dummy. </li>
                             </ul>
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-lg-6 wow fadeInRight">
                      <img src={SolutionsImg} className="img-fluid" alt="" />
                   </div>
                </div>

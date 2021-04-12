@@ -7,12 +7,35 @@ import HeaderHamburgerClose from '../../images/tiktokfans-close.png';
 
 
 export default class HeaderNav extends React.Component {
+    listener = null;
+
     constructor() {
         super()
 
         this.state = {
             activeMenu: false,
-            hiddenButton: true
+            hiddenButton: true,
+            nav: false
+        }
+    }
+
+    componentDidMount() {
+        window.addEventListener("scroll", this.handleScroll)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.listener )
+    }
+
+    handleScroll = () =>{
+        if (window.pageYOffset > 15) {
+            if(!this.state.nav){
+              this.setState({ nav: true });
+            }
+        }else{
+            if(this.state.nav){
+              this.setState({ nav: false });
+            }
         }
     }
 
@@ -52,7 +75,7 @@ export default class HeaderNav extends React.Component {
 
     render(){
         return (
-            <header id="main-header" className="header-three">
+            <header id="main-header" className={`header-three ${this.state.nav && 'sticked wow fadeInDown'}`}>
                 <nav id="menu-1" className="mega-menu">
                     <div class="menu-list-items">
                     <div className="container-fluid">

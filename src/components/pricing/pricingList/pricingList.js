@@ -29,7 +29,7 @@ const PricingList = () =>{
                     <div className="container">
                     <div className="row  no-gutters ">
                         <div className="col-lg-12">
-                        <div className=" pricing-info">
+                        <div className=" pricing-info wow fadeInUp">
                             <div className="row">
                             <div className="col-lg-2 col-sm-12"> <img src={PricingImg} className="img-fluid" alt="list" /></div>
                             <div className="col-lg-7 col-sm-12 align-self-center">
@@ -62,7 +62,7 @@ const PricingList = () =>{
                         </div>
                         </div>
                         <div className="col-lg-12">
-                        <div className=" pricing-info mt-4 mb-4">
+                        <div className=" pricing-info mt-4 mb-4 wow fadeInUp">
                             <div className="row">
                             <div className="col-lg-2 col-sm-12"> <img src={PricingImg} className="img-fluid" alt="list" /></div>
                             <div className="col-lg-7 col-sm-12 align-self-center">
@@ -95,7 +95,7 @@ const PricingList = () =>{
                         </div>
                         </div>
                         <div className="col-lg-12">
-                        <div className=" pricing-info">
+                        <div className=" pricing-info wow fadeInUp">
                             <div className="row">
                             <div className="col-lg-2 col-sm-12"> <img src={PricingImg} className="img-fluid" alt="list" /></div>
                             <div className="col-lg-7 col-sm-12 align-self-center">
@@ -128,7 +128,7 @@ const PricingList = () =>{
                         </div>
                         </div>
                         <div className="col-lg-12">
-                        <div className=" pricing-info">
+                        <div className=" pricing-info wow fadeInUp">
                             <div className="row">
                             <div className="col-lg-2 col-sm-12"> <img src={PricingImg} className="img-fluid" alt="list" /></div>
                             <div className="col-lg-7 col-sm-12 align-self-center">
@@ -161,7 +161,7 @@ const PricingList = () =>{
                         </div>
                         </div>
                         <div className="col-lg-12">
-                        <div className=" pricing-info mt-4 mb-4">
+                        <div className=" pricing-info mt-4 mb-4 wow fadeInUp">
                             <div className="row">
                             <div className="col-lg-2 col-sm-12"> <img src={PricingImg} className="img-fluid" alt="list" /></div>
                             <div className="col-lg-7 col-sm-12 align-self-center">
@@ -194,7 +194,7 @@ const PricingList = () =>{
                         </div>
                         </div>
                         <div className="col-lg-12">
-                        <div className=" pricing-info">
+                        <div className=" pricing-info wow fadeInUp">
                             <div className="row">
                             <div className="col-lg-2 col-sm-12"> <img src={PricingImg} className="img-fluid" alt="list" /></div>
                             <div className="col-lg-7 col-sm-12 align-self-center">

@@ -5,7 +5,7 @@ import OtherImg from './2.jpg';
 export default class ServicesAbout extends React.Component {
     render() {
         return(
-            <div className="overview-block-ptb">
+            <div className="overview-block-ptb ">
             <div className="container">
                <div className="row">
                   <div className="col-sm-12 text-center">
@@ -19,7 +19,7 @@ export default class ServicesAbout extends React.Component {
             <div className="iq-choose-info pt-0  position-relative">
                <div className="container">
                   <div className="row flex-row-reverse ">
-                     <div className="col-lg-6 align-self-center mb-5">
+                     <div className="col-lg-6 align-self-center mb-5  wow fadeInRight">
                         
                         <div className="iq-accordion">
                            <div className="iq-ad-block ">
@@ -52,7 +52,7 @@ export default class ServicesAbout extends React.Component {
                            </div>
                         </div>
                      </div>
-                     <div className="col-lg-6 pt-5">
+                     <div className="col-lg-6 pt-5 wow fadeInLeft">
                         <img src={OtherImg} className="img-fluid" alt="" />
                      </div>
                   </div>

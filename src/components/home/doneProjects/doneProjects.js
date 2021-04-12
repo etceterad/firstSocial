@@ -1,4 +1,5 @@
 import React from 'react';
+import {GridList, GridListTile} from '@material-ui/core';
 // img's
 import Background from './images/13.png';
 import FirstImg from './images/01.jpg';
@@ -40,78 +41,80 @@ export default class DoneProjects extends React.Component {
                     <div className="col-sm-12">
                         <div className="iq-masonry-block ">
                             <div className="iq-masonry iq-columns-4">
-                            <div className="iq-masonry-item creative">
-                                <div className="iq-portfolio">
-                                    <img src={FirstImg} className="img-fluid" alt="done project" />
-                                    <div className="portfolio-info">
-                                        <a href=""><span className="text-black">Design Concept</span></a>
-                                        <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                            <GridList>
+                                    <div className="iq-masonry-item creative">
+                                        <div className="iq-portfolio">
+                                            <img src={FirstImg} className="img-fluid" alt="done project" />
+                                            <div className="portfolio-info">
+                                                <a href=""><span className="text-black">Design Concept</span></a>
+                                                <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="iq-masonry-item digital">
-                                <div className="iq-portfolio">
-                                    <img src={SecondImg} className="img-fluid" alt="done project" />
-                                    <div className="portfolio-info">
-                                        <a href=""><span className="text-black">Design Concept</span></a>
-                                        <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                    <div className="iq-masonry-item digital">
+                                        <div className="iq-portfolio">
+                                            <img src={SecondImg} className="img-fluid" alt="done project" />
+                                            <div className="portfolio-info">
+                                                <a href=""><span className="text-black">Design Concept</span></a>
+                                                <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="iq-masonry-item business">
-                                <div className="iq-portfolio">
-                                    <img src={ThirdImg} className="img-fluid" alt="done project" />
-                                    <div className="portfolio-info">
-                                        <a href=""><span className="text-black">Design Concept</span></a>
-                                        <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                    <div className="iq-masonry-item business">
+                                        <div className="iq-portfolio">
+                                            <img src={ThirdImg} className="img-fluid" alt="done project" />
+                                            <div className="portfolio-info">
+                                                <a href=""><span className="text-black">Design Concept</span></a>
+                                                <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="iq-masonry-item seo business">
-                                <div className="iq-portfolio">
-                                    <img src={FourthImg} className="img-fluid" alt="done project" />
-                                    <div className="portfolio-info">
-                                        <a href=""><span className="text-black">Design Concept</span></a>
-                                        <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                    <div className="iq-masonry-item seo business">
+                                        <div className="iq-portfolio">
+                                            <img src={FourthImg} className="img-fluid" alt="done project" />
+                                            <div className="portfolio-info">
+                                                <a href=""><span className="text-black">Design Concept</span></a>
+                                                <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="iq-masonry-item creative seo">
-                                <div className="iq-portfolio">
-                                    <img src={FithImg} className="img-fluid" alt="done project" />
-                                    <div className="portfolio-info">
-                                        <a href=""><span className="text-black">Design Concept</span></a>
-                                        <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                    <div className="iq-masonry-item creative seo">
+                                        <div className="iq-portfolio">
+                                            <img src={FithImg} className="img-fluid" alt="done project" />
+                                            <div className="portfolio-info">
+                                                <a href=""><span className="text-black">Design Concept</span></a>
+                                                <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="iq-masonry-item digital seo">
-                                <div className="iq-portfolio">
-                                    <img src={SixthImg} className="img-fluid" alt="done project" />
-                                    <div className="portfolio-info">
-                                        <a href=""><span className="text-black">Design Concept</span></a>
-                                        <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                    <div className="iq-masonry-item digital seo">
+                                        <div className="iq-portfolio">
+                                            <img src={SixthImg} className="img-fluid" alt="done project" />
+                                            <div className="portfolio-info">
+                                                <a href=""><span className="text-black">Design Concept</span></a>
+                                                <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="iq-masonry-item creative seo">
-                                <div className="iq-portfolio">
-                                    <img src={SeventhImg} className="img-fluid" alt="done project" />
-                                    <div className="portfolio-info">
-                                        <a href=""><span className="text-black">Design Concept</span></a>
-                                        <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                    <div className="iq-masonry-item creative seo">
+                                        <div className="iq-portfolio">
+                                            <img src={SeventhImg} className="img-fluid" alt="done project" />
+                                            <div className="portfolio-info">
+                                                <a href=""><span className="text-black">Design Concept</span></a>
+                                                <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="iq-masonry-item digital seo">
-                                <div className="iq-portfolio">
-                                    <img src={EighthImg} className="img-fluid" alt="done project" />
-                                    <div className="portfolio-info">
-                                        <a href=""><span className="text-black">Design Concept</span></a>
-                                        <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                    <div className="iq-masonry-item digital seo">
+                                        <div className="iq-portfolio">
+                                            <img src={EighthImg} className="img-fluid" alt="done project" />
+                                            <div className="portfolio-info">
+                                                <a href=""><span className="text-black">Design Concept</span></a>
+                                                <a href="#" className="text-uppercase text-gray float-right">Design</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                </GridList>
                             </div>
                         </div>
                     </div>

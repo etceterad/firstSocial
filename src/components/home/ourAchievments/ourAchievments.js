@@ -1,7 +1,10 @@
 import React from 'react';
 import OurAchievmentsImg from './1.jpg';
+import CountUp from 'react-countup';
+import VisibilitySensor from 'react-visibility-sensor';
 
 export default class OurAchievments extends React.Component {
+
     render() {
         return (
             <section className="iq-solutions position-relative  light-gray-bg ">
@@ -16,7 +19,13 @@ export default class OurAchievments extends React.Component {
                            <div className="media align-items-center">
                               <i className="ion-ios-pie-outline align-self-center"></i>
                               <div className="media-body ml-3">
-                                 <span className="counter">1520</span>
+                                 <CountUp className="counter" end={1520} duration={3} redraw={true} >
+                                    {({ countUpRef, start }) => (
+                                       <VisibilitySensor onChange={start} delayedCall>
+                                          <span ref={countUpRef} />
+                                       </VisibilitySensor>
+                                 )}
+                                 </CountUp>
                                  <p className="mb-0">Projects Done.</p>
                               </div>
                            </div>
@@ -25,7 +34,13 @@ export default class OurAchievments extends React.Component {
                            <div className="media align-items-center">
                               <i className="ion-ios-heart-outline align-self-center"></i>
                               <div className="media-body ml-3">
-                                 <span className="counter">1240</span>
+                                 <CountUp className="counter" end={1240} duration={3} redraw={false} >
+                                    {({ countUpRef, start }) => (
+                                       <VisibilitySensor onChange={start} delayedCall>
+                                          <span ref={countUpRef} />
+                                       </VisibilitySensor>
+                                    )}
+                                 </CountUp>
                                  <p>Happy Clients.</p>
                               </div>
                            </div>

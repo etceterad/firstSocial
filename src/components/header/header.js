@@ -5,12 +5,37 @@ import HeaderHamburger from '../../images/tiktokfans-hamburger.png';
 import HeaderHamburgerClose from '../../images/tiktokfans-close.png';
 
 export default class Header extends React.Component {
+    listener = null;
+
     constructor() {
         super()
 
         this.state = {
             activeMenu: false,
-            hiddenButton: true
+            hiddenButton: true,
+            nav: false
+        }
+
+        this.handleScroll = this.handleScroll.bind(this);
+    }
+
+    componentDidMount() {
+        window.addEventListener("scroll", this.handleScroll)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.listener)
+    }
+
+    handleScroll = () =>{
+        if (window.pageYOffset > 15) {
+            if(!this.state.nav){
+              this.setState({ nav: true });
+            }
+        }else{
+            if(this.state.nav){
+              this.setState({ nav: false });
+            }
         }
     }
 
@@ -53,7 +78,7 @@ export default class Header extends React.Component {
 
         return (
             <>
-                <header id="main-header" className="header-one">
+                <header id="main-header" className={`header-one ${this.state.nav && 'sticked'}`}>
                     <nav id="menu-1" className="mega-menu" data-color="">
                         <div className="menu-list-items">
                             <div className="container-fluid">

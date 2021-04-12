@@ -3,6 +3,8 @@ import Header from '../../header';
 import Footer from '../../footer';
 import Offer from '../../offer';
 import PortfolioGrid from '../portfolioGrid';
+import WOW from 'wowjs';
+import Preloader from '../../preloader';
 
 export default class PortfolioPage extends React.Component {
     constructor(props){
@@ -15,6 +17,12 @@ export default class PortfolioPage extends React.Component {
         }
     }
 
+    componentDidMount() {
+        new WOW.WOW({
+          live: false
+      }).init();
+    }
+
     // setActiveClass() {
     //     this.setState({
     //         activeClass: true
@@ -24,6 +32,7 @@ export default class PortfolioPage extends React.Component {
     render() {
         return (
             <>
+                <Preloader />
                 <Header active={this.state.activeId} />
                 <Offer titleActive={this.state.titleActive} />
                 <PortfolioGrid />

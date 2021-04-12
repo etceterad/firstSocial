@@ -3,6 +3,8 @@ import Header from '../../header';
 import Offer from '../../offer';
 import PrivacyPolicyInfo from '../privacyPolicyInfo';
 import Footer from '../../footer';
+import Preloader from '../../preloader';
+import WOW from 'wowjs';
 
 
 export default class PrivacyPolicyPage extends React.Component {
@@ -15,6 +17,14 @@ export default class PrivacyPolicyPage extends React.Component {
         }
     }
 
+    componentDidMount() {
+        setTimeout(() =>{
+            new WOW.WOW({
+                live: false
+            }).init();
+        }, 500)
+    }
+
     setActiveClass() {
         this.setState({
             activeClass: true
@@ -24,6 +34,7 @@ export default class PrivacyPolicyPage extends React.Component {
     render() {
         return (
             <>
+                <Preloader />
                 <Header active={this.state.activeClass} setActive={this.setActiveClass}/>
                 <Offer titleActive={this.state.titleActive}/>
                 <div className="main-content">
