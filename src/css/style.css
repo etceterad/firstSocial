@@ -78,22 +78,7 @@ header .main-header {
 	padding: 0;
 }
 
-.preloader {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	justify-content: center;
-	align-items: center;
-	z-index: 999;
-	background: #fff;
-	display: none!important;
-	transition: all 0.2s ease;
-}
 
-.preloader-active {
-	display: block;
-	overflow-y: hidden;
-}
 
 /*----------------
 Megamenu 
@@ -5655,5 +5640,20 @@ Features
 }
 
 
+.preloader {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+	background: #fff;
+	display: none!important;
+}
 
+.preloader-active {
+	display: block;
+	overflow-y: hidden;
+	transition: all 0.2s ease;
+}
 

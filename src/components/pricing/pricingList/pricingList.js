@@ -8,7 +8,7 @@ const PricingList = () =>{
     const [nameActive, setNameActive] = useState("");
     const [priceActive, setPriceActive] = useState("");
 
-    const modalFunction = (nameActive, priceActive) => {
+    const modalFunction = (nameActive, priceActive, e) => {
         setModalActive(true);
         setNameActive(nameActive);
         setPriceActive(priceActive);

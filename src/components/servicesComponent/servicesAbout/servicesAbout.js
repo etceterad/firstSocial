@@ -1,11 +1,12 @@
 import React from 'react';
 import AboutImg from '../../../images/service/3.png';
+import Accordeon from '../../accordion';
 import OtherImg from './2.jpg';
 
 export default class ServicesAbout extends React.Component {
     render() {
         return(
-            <div className="overview-block-ptb ">
+            <div className="overview-block-ptb">
             <div className="container">
                <div className="row">
                   <div className="col-sm-12 text-center">
@@ -16,41 +17,11 @@ export default class ServicesAbout extends React.Component {
                   </div>
                </div>
             </div>
-            <div className="iq-choose-info pt-0  position-relative">
+            <div className="about-us-container pt-0  position-relative">
                <div className="container">
                   <div className="row flex-row-reverse ">
                      <div className="col-lg-6 align-self-center mb-5  wow fadeInRight">
-                        
-                        <div className="iq-accordion">
-                           <div className="iq-ad-block ">
-                              <a href="javascript:void(0)" className="ad-title iq-fw-6 ">Why do we use it?</a>
-                              <div className="ad-details">
-                                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
-                                 </p>
-                              </div>
-                           </div>
-                           <div className="iq-ad-block ">
-                              <a href="javascript:void(0)" className="ad-title iq-fw-6 ">Where does it come from?</a>
-                              <div className="ad-details">
-                                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
-                                 </p>
-                              </div>
-                           </div>
-                           <div className="iq-ad-block ">
-                              <a href="javascript:void(0)" className="ad-title iq-fw-6 ">There are many variationof passages?</a>
-                              <div className="ad-details">
-                                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
-                                 </p>
-                              </div>
-                           </div>
-                           <div className="iq-ad-block ">
-                              <a href="javascript:void(0)" className="ad-title iq-fw-6 ">Standard chunk of Lorem Ipsum used since the 1500s?</a>
-                              <div className="ad-details">
-                                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
+                        <Accordeon />
                      </div>
                      <div className="col-lg-6 pt-5 wow fadeInLeft">
                         <img src={OtherImg} className="img-fluid" alt="" />

@@ -17,7 +17,7 @@ export default class Preloader extends React.Component {
             this.setState({
                 preloaderActive: false
             })
-        }, 700)
+        }, 800)
     }
 
     render(){

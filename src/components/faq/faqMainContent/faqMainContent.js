@@ -1,6 +1,18 @@
 import React from 'react';
+import Accordeon from '../../accordion';
 
 export default class FaqMainContent extends React.Component {
+    constructor() {
+        super()
+
+        this.state = {
+            activeTabId: 0,
+            activeTab: false
+        }
+    }
+
+    
+
     render() {
         return(
             <section className="iq-asked position-relative">
@@ -15,57 +27,9 @@ export default class FaqMainContent extends React.Component {
                     </div>
                     <div className="row">
                         <div className="col-lg-12">
-                            <div className="iq-accordion">
-                                <div className="iq-ad-block"> <a href="javascript:void(0)" className="ad-title iq-fw-6 ">Why do we use it?</a>
-                                            <div className="ad-details">
-                                                
-                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
-                                                </p>
-                                            
-                                            </div>
-                                        </div>
-                                        <div className="iq-ad-block"> <a href="javascript:void(0)" className="ad-title iq-fw-6 ">Where does it come from?</a>
-                                            <div className="ad-details">
-                                            
-                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
-                                                </p>
-                                            
-                                            </div>
-                                        </div>
-                                        <div className="iq-ad-block "> <a href="javascript:void(0)" className="ad-title iq-fw-6 ">There are many variationof passages?</a>
-                                            <div className="ad-details">  
-                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
-                                                </p>
-                                                
-                                            </div>
-                                        </div>
-                                        <div className="iq-ad-block "> <a href="javascript:void(0)" className="ad-title iq-fw-6 ">Standard chunk of Lorem Ipsum used since the 1500s?</a>
-                                            <div className="ad-details">
-                                                
-                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
-                                                </p>
-                                                
-                                            </div>
-                                        </div>
-                                        <div className="iq-ad-block "> <a href="javascript:void(0)" className="ad-title iq-fw-6 ">This book is a treatise on the theory?</a>
-                                            <div className="ad-details">
-                                                
-                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
-                                                </p>
-                                            
-                                            </div>
-                                        </div>
-                                        <div className="iq-ad-block "> <a href="javascript:void(0)" className="ad-title iq-fw-6 ">What is Lorem Ipsum?</a>
-                                            <div className="ad-details">
-                                                
-                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.
-                                                </p>
-                                            
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
+                            <Accordeon />
                         </div>
+                    </div>
                 </div>
             </section>
         )
