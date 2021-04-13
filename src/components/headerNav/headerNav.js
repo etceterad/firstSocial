@@ -63,14 +63,16 @@ export default class HeaderNav extends React.Component {
         })
     }
 
-    functionForHamburger() {
+    functionForHamburger(e) {
         this.setActiveMenu();
         this.setHiddenButton();
+        e.preventDefault();
     }
 
-    functionForHamburgerClose() {
+    functionForHamburgerClose(e) {
         this.resetHiddenButton();
         this.resetActiveMenu();
+        e.preventDefault();
     }
 
     render(){
@@ -89,10 +91,10 @@ export default class HeaderNav extends React.Component {
                                 <ul class="menu-contact">
                                     <li className=" text-black iq-fw-9"><a href="tel:0123456789" ><i className="fas fa-phone pr-2 pl-4"></i> 0 123 456 789</a></li>
                                 </ul>
-                                <a href="##" onClick={() => this.functionForHamburgerClose()}>
+                                <a href=" " onClick={(e) => this.functionForHamburgerClose(e)}>
                                     <img className={this.state.hiddenButton ? "header-hamburger-close hidden-btn" : "header-hamburger-close"} src={HeaderHamburgerClose} alt="hamburger-close"/>
                                 </a>
-                                <a href="##" onClick={() => this.functionForHamburger()}>
+                                <a href=" " onClick={(e) => this.functionForHamburger(e)}>
                                     <img className={this.state.hiddenButton ? "header-hamburger" : "header-hamburger hidden-btn"} src={HeaderHamburger} alt="hamburger"/>
                                 </a>
                                 <ul className={this.state.activeMenu ? "menu-links active-menu" : "menu-links"}>

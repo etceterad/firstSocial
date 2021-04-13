@@ -8,12 +8,13 @@ const PricingList = () =>{
     const [nameActive, setNameActive] = useState("");
     const [priceActive, setPriceActive] = useState("");
 
-    const modalFunction = (nameActive, priceActive, e) => {
+    const modalFunction = (e, nameActive, priceActive) => {
         setModalActive(true);
         setNameActive(nameActive);
         setPriceActive(priceActive);
+        e.preventDefault();
     }
-    
+
         return(
             <section className="iq-pricingplan">
                 <div className="container">
@@ -53,7 +54,7 @@ const PricingList = () =>{
                             </div>
                             <div className="col-lg-3 col-sm-12 text-center align-self-center">
                                 <h2 className="price iq-fw-8">$29 <span className="text-gray iq-font-18 iq-fw-6">/ Frist payment </span></h2>
-                                <a className="slide-button button popup-pusrchase-win" href="##" id="starter" onClick={() => modalFunction("Starter", 29)}>
+                                <a className="slide-button button popup-pusrchase-win" href=" " id="starter" onClick={(e) => modalFunction(e, "Starter", 29)}>
                                     <div className="first">Purchase</div>
                                     <div className="second">Purchase</div>
                                 </a>
@@ -86,7 +87,7 @@ const PricingList = () =>{
                             </div>
                             <div className="col-lg-3 col-sm-12 text-center align-self-center">
                                 <h2 className="price iq-fw-8">$49 <span className="text-gray iq-font-18 iq-fw-6">/ Frist payment </span></h2>
-                                <a className="slide-button button popup-pusrchase-win" href="##" id="enterprice" onClick={() => modalFunction("Enterprice", 49)}>
+                                <a className="slide-button button popup-pusrchase-win" href="##" id="enterprice" onClick={(e) => modalFunction(e, "Enterprice", 49)}>
                                 <div className="first">Purchase</div>
                                 <div className="second">Purchase</div>
                                 </a>
@@ -119,7 +120,7 @@ const PricingList = () =>{
                             </div>
                             <div className="col-lg-3 col-sm-12 text-center align-self-center">
                                 <h2 className="price iq-fw-8">$99 <span className="text-gray iq-font-18 iq-fw-6">/ Frist payment </span></h2>
-                                <a className="slide-button button popup-pusrchase-win" href="##" id="professional" onClick={() => modalFunction("Professional", 99)}>
+                                <a className="slide-button button popup-pusrchase-win" href="##" id="professional" onClick={(e) => modalFunction(e, "Professional", 99)}>
                                 <div className="first">Purchase</div>
                                 <div className="second">Purchase</div>
                                 </a>
@@ -152,7 +153,7 @@ const PricingList = () =>{
                             </div>
                             <div className="col-lg-3 col-sm-12 text-center align-self-center">
                                 <h2 className="price iq-fw-8">$149 <span className="text-gray iq-font-18 iq-fw-6">/ Frist payment </span></h2>
-                                <a className="slide-button button popup-pusrchase-win" href="##" id="luxury" onClick={() => modalFunction("Luxury", 149)}>
+                                <a className="slide-button button popup-pusrchase-win" href="##" id="luxury" onClick={(e) => modalFunction(e, "Luxury", 149)}>
                                 <div className="first">Purchase</div>
                                 <div className="second">Purchase</div>
                                 </a>
@@ -185,7 +186,7 @@ const PricingList = () =>{
                             </div>
                             <div className="col-lg-3 col-sm-12 text-center align-self-center">
                                 <h2 className="price iq-fw-8">$199 <span className="text-gray iq-font-18 iq-fw-6">/ Frist payment </span></h2>
-                                <a className="slide-button button popup-pusrchase-win" href="##" id="vip" onClick={() => modalFunction("VIP", 199)}>
+                                <a className="slide-button button popup-pusrchase-win" href="##" id="vip" onClick={(e) => modalFunction(e, "VIP", 199)}>
                                 <div className="first">Purchase</div>
                                 <div className="second">Purchase</div>
                                 </a>
@@ -218,7 +219,7 @@ const PricingList = () =>{
                             </div>
                             <div className="col-lg-3 col-sm-12 text-center align-self-center">
                                 <h2 className="price iq-fw-8">$299 <span className="text-gray iq-font-18 iq-fw-6">/ First payment </span></h2>
-                                <a className="slide-button button popup-pusrchase-win" href="##" id="godlike" onClick={() => modalFunction("Godlike", 299)}>
+                                <a className="slide-button button popup-pusrchase-win" href="##" id="godlike" onClick={(e) => modalFunction(e, "Godlike", 299)}>
                                 <div className="first">Purchase</div>
                                 <div className="second">Purchase</div>
                                 </a>

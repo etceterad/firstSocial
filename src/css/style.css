@@ -193,7 +193,7 @@ header .mega-menu .drop-down-multilevel a {
 	padding: 10px 15px;
 }
 
-header.header-one .mega-menu.desktopTopFixed .menu-contact {
+header.header-one.sticked .mega-menu .menu-contact {
 	color: #000000;
 }
 
@@ -281,12 +281,12 @@ header .mega-menu .drop-down-multilevel i.fas {
 	color: #ffffff;
 }
 
-header .mega-menu.desktopTopFixed .menu-contact a, header .mega-menu.mobileTopFixed .menu-contact a {
+header.sticked .mega-menu .menu-contact a, header.sticked .mega-menu .menu-contact a {
 	color: #1b0e3d;
 }
 
 header .mega-menu .menu-links {
-	padding-left: 100px;
+	padding-left: 70px;
 }
 
 header .mega-menu .drop-down-multilevel {
@@ -2224,11 +2224,16 @@ Faq section
 	float: left;
 	width: 100%;
 	padding: 30px 0;
-	display: none;
+	transform: scale(1, 0);
+	height: 0;
+	padding: 0;	
 }
 
 .iq-accordion .ad-active .ad-details {
-	display: block;
+	transform: scale(1, 1);
+	height: auto;
+	padding: 25px 0 0 0px;	
+	transition: all 0.3s ease;
 }
 
 /*----------------

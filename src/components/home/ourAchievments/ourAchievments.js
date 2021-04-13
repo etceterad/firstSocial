@@ -19,7 +19,7 @@ export default class OurAchievments extends React.Component {
                            <div className="media align-items-center">
                               <i className="ion-ios-pie-outline align-self-center"></i>
                               <div className="media-body ml-3">
-                                 <CountUp className="counter" end={1520} duration={3} redraw={true} >
+                                 <CountUp className="counter" end={1520} duration={3} redraw={false} >
                                     {({ countUpRef, start }) => (
                                        <VisibilitySensor onChange={start} delayedCall>
                                           <span ref={countUpRef} />
