@@ -13,7 +13,7 @@ export default class ContactUsPage extends React.Component {
 
         this.state = {
             titleActive: "Contact Us",
-            activeId: 6
+            activeId: 6,
         }
     }
 

@@ -2,6 +2,21 @@ import React from 'react';
 import OurSuccessImg from './2.jpg';
 
 export default class OurSucces extends React.Component {
+   constructor(props) {
+      super(props)
+
+      this.state = {
+         isMobile: true
+      }
+   } 
+
+   componentDidMount(){
+      window.addEventListener('resize', () => {
+         this.setState({
+             isMobile: window.innerWidth < 1020
+         });
+     }, false);
+   }
    
     render() {
         return (
@@ -9,7 +24,7 @@ export default class OurSucces extends React.Component {
             <div className="container">
                <div className="row flex-row-reverse align-items-center h-100 our-success">
 
-                  <div className="col-lg-6 align-self-center wow fadeInRight" >
+                  <div className={this.state.isMobile ? "col-lg-6 align-self-center wow fadeInUp" : "col-lg-6 align-self-center wow fadeInRight"} >
                      <p className="text-uppercase  iq-fw-3 iq-ls-3">Our Success</p>
                      <h2 className="iq-fw-8 mb-2">The Secrets to Successful About TikTokFans</h2>
                      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
@@ -23,7 +38,7 @@ export default class OurSucces extends React.Component {
                      </div>
                   </div>
                   <div className="col-lg-6 iq-rmt-40">
-                     <img src={OurSuccessImg} className="img-fluid wow fadeInLeft" alt="our success" />
+                     <img src={OurSuccessImg} className={this.state.isMobile ? "img-fluid wow fadeInUp" : "img-fluid wow fadeInLeft"} alt="our success" />
                   </div>
                </div>
             </div>

@@ -8,8 +8,17 @@ export default class ServicesAbout extends React.Component {
 
       this.state = {
           activeTabId: 0,
-          activeTab: false
+          activeTab: false,
+          isMobile: true
       }
+  }
+
+  componentDidMount() {
+   window.addEventListener('resize', () => {
+      this.setState({
+          isMobile: window.innerWidth < 1020
+      });
+  }, false);
   }
 
   setActiveTabId(id){
@@ -35,7 +44,7 @@ export default class ServicesAbout extends React.Component {
             <div className="about-us-container pt-0  position-relative">
                <div className="container">
                   <div className="row flex-row-reverse ">
-                     <div className="col-lg-6 align-self-center mb-5  wow fadeInRight">
+                     <div className={this.state.isMobile ? "col-lg-6 align-self-center mb-5  wow fadeInUp" : "col-lg-6 align-self-center mb-5  wow fadeInRight"} >
                         <div className="iq-accordion">
                            <div className={this.state.activeTabId === 1 ? "iq-ad-block ad-active" : "iq-ad-block"} onClick={() => this.setActiveTabId(1)}> <span href=" " onClick={this.preventDefault} className="ad-title iq-fw-6 ">Why do we use it?</span>
                               <div className="ad-details">
@@ -64,7 +73,7 @@ export default class ServicesAbout extends React.Component {
                            </div>
                         </div>
                      </div>
-                     <div className="col-lg-6 pt-5 wow fadeInLeft">
+                     <div className={this.state.isMobile ? "col-lg-6 pt-5 wow fadeInUp" : "col-lg-6 pt-5 wow fadeInLeft"}>
                         <img src={OtherImg} className="img-fluid" alt="" />
                      </div>
                   </div>

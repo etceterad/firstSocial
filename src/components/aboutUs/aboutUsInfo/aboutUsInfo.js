@@ -2,12 +2,28 @@ import React from 'react';
 import InfoImg from './2.jpg';
 
 export default class AboutUsInfo extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            isMobile: true
+        }
+    }
+
+    componentDidMount(){
+        window.addEventListener('resize', () => {
+           this.setState({
+               isMobile: window.innerWidth < 1020
+           });
+       }, false);
+     }
+
     render() {
         return (
             <section className="iq-solutions pt-0">
                 <div className="container">
                     <div className="row flex-row-reverse">
-                        <div className="col-lg-6 align-self-center wow fadeInRight">
+                        <div className={this.state.isMobile ? "col-lg-6 align-self-center wow fadeInUp" : "col-lg-6 align-self-center wow fadeInRight"}>
                             <h2 className="iq-fw-8 mb-2">Who We are</h2>
                             <p className="mb-3">Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,Lorem Ipsum.lorem quis bibendum auctor. Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,Lorem Ipsum.lorem quis bibendum auctor.</p>
                             <p className="mb-3">Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor.</p>
