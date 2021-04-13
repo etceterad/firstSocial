@@ -477,15 +477,15 @@ header.header-four  .container-fluid {
 
 @media(max-width:1080px) {
 	header.header-three .mega-menu .menu-links {
-		padding-left: 60px;
-	}
-
-	#menu-1 .menu-sidebar li {
-		padding: 0 0 0 10px;
-	}
-
-	header.header-three .mega-menu .menu-links {
 		padding-left: 30px;
+	}
+
+	#menu-1 .menu-sidebar a {
+		display: none;
+	}
+
+	header .mega-menu ul.menu-links {
+		padding-left: 25px;
 	}
 
 	.iq-work .work-content h3 {
@@ -502,6 +502,9 @@ header.header-four  .container-fluid {
 @media(max-width: 1052px) {
 	header .mega-menu ul.menu-links li a  {
 		padding-left: 15px;
+	}
+	header .mega-menu ul.menu-links {
+		padding: 0 0 0 20px;
 	}
 }
 
