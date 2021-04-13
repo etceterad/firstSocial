@@ -243,7 +243,7 @@ NOTE: This file contains the styling for responsive Template.
 	}
 
 	header.header-three .mega-menu .menu-links {
-		padding-left: 80px;
+		padding-left: 40px;
 	}
 
 	.services .service-shap {
@@ -387,8 +387,12 @@ header.header-four  .container-fluid {
 		padding: 15px 0;
 	}
 
-	header .mega-menu .menu-links {
-		padding-left: 25px;
+	header.header-three .mega-menu .menu-links {
+		padding-left: 10px;
+	}
+
+	#menu-1 .menu-sidebar li {
+		padding: 0 0 0 10px
 	}
 
 	header .mega-menu .menu-links > li > a {
@@ -1445,6 +1449,9 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 
 	header.header-three .menu-contact {
 		left: 21%;
+	}
+	header.header-one{
+		padding-bottom: 8px;
 	}
 
 	header .mega-menu .menu-links {

@@ -98,6 +98,7 @@ header.sticked{
     box-shadow: 0px 6px 24px -6px rgba(0,0,0,0.22);
 	transform: scale(0, 250px);
 	transition: all 0.5s ease;
+	z-index: 1000;
 }
 
 header.sticked  .mega-menu .menu-list-items {

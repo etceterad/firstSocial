@@ -19,7 +19,7 @@ export default class PortfolioGrid extends React.Component {
                         </div>
                         <Grid container spacing={3} className="isotope iq-columns-3  infinite-scrolling">
                         
-                            <Grid item xs={4} className="iq-grid-item creative wow fadeInUp">
+                            <Grid item xs={12} sm={4} lg={4} xl={4} className="iq-grid-item creative wow fadeInUp">
                                 <a href="porfolio-detail.html">
                                 <div className="iq-portfolio">
                                     <img src={PortfolioImg} className="img-fluid" alt="portfolio" />
@@ -30,7 +30,7 @@ export default class PortfolioGrid extends React.Component {
                                 </div>
                                 </a>
                             </Grid>
-                            <Grid item xs={4} className="iq-grid-item creative wow fadeInUp">
+                            <Grid item xs={12} sm={4} lg={4} xl={4} className="iq-grid-item creative wow fadeInUp">
                                 <a href="porfolio-detail.html">
                                 <div className="iq-portfolio">
                                     <img src={PortfolioImg} className="img-fluid" alt="portfolio" />
@@ -41,7 +41,7 @@ export default class PortfolioGrid extends React.Component {
                                 </div>
                                 </a>
                             </Grid>
-                            <Grid item xs={4} className="iq-grid-item creative wow fadeInUp">
+                            <Grid item xs={12} sm={4} lg={4} xl={4} className="iq-grid-item creative wow fadeInUp">
                                 <a href="porfolio-detail.html">
                                 <div className="iq-portfolio">
                                     <img src={PortfolioImg} className="img-fluid" alt="portfolio" />
@@ -52,7 +52,7 @@ export default class PortfolioGrid extends React.Component {
                                 </div>
                                 </a>
                             </Grid>
-                            <Grid item xs={4} className="iq-grid-item creative wow fadeInUp">
+                            <Grid item xs={12} sm={4} lg={4} xl={4} className="iq-grid-item creative wow fadeInUp">
                                 <a href="porfolio-detail.html">
                                 <div className="iq-portfolio">
                                     <img src={PortfolioImg} className="img-fluid" alt="portfolio" />
@@ -63,7 +63,7 @@ export default class PortfolioGrid extends React.Component {
                                 </div>
                                 </a>
                             </Grid>
-                            <Grid item xs={4} className="iq-grid-item creative wow fadeInUp">
+                            <Grid item xs={12} sm={4} lg={4} xl={4} className="iq-grid-item creative wow fadeInUp">
                                 <a href="porfolio-detail.html">
                                 <div className="iq-portfolio">
                                     <img src={PortfolioImg} className="img-fluid" alt="portfolio" />
@@ -74,7 +74,7 @@ export default class PortfolioGrid extends React.Component {
                                 </div>
                                 </a>
                             </Grid>
-                            <Grid item xs={4} className="iq-grid-item creative wow fadeInUp">
+                            <Grid item xs={12} sm={4} lg={4} xl={4} className="iq-grid-item creative wow fadeInUp">
                                 <a href="porfolio-detail.html">
                                 <div className="iq-portfolio">
                                     <img src={PortfolioImg} className="img-fluid" alt="portfolio" />
@@ -85,7 +85,7 @@ export default class PortfolioGrid extends React.Component {
                                 </div>
                                 </a>
                             </Grid>
-                            <Grid item xs={4} className="iq-grid-item creative wow fadeInUp">
+                            <Grid item xs={12} sm={4} lg={4} xl={4} className="iq-grid-item creative wow fadeInUp">
                                 <a href="porfolio-detail.html">
                                 <div className="iq-portfolio">
                                     <img src={PortfolioImg} className="img-fluid" alt="portfolio" />
@@ -96,7 +96,7 @@ export default class PortfolioGrid extends React.Component {
                                 </div>
                                 </a>
                             </Grid>
-                            <Grid item xs={4} className="iq-grid-item creative wow fadeInUp">
+                            <Grid item xs={12} sm={4} lg={4} xl={4} className="iq-grid-item creative wow fadeInUp">
                                 <a href="porfolio-detail.html">
                                 <div className="iq-portfolio">
                                     <img src={PortfolioImg} className="img-fluid" alt="portfolio" />
@@ -107,7 +107,7 @@ export default class PortfolioGrid extends React.Component {
                                 </div>
                                 </a>
                             </Grid>
-                            <Grid item xs={4} className="iq-grid-item creative wow fadeInUp">
+                            <Grid item xs={12} sm={4} lg={4} xl={4} className="iq-grid-item creative wow fadeInUp">
                             <a href="porfolio-detail.html">
                             <div className="iq-portfolio">
                                 <img src={PortfolioImg} className="img-fluid" alt="portfolio" />
@@ -118,7 +118,7 @@ export default class PortfolioGrid extends React.Component {
                             </div>
                             </a>
                         </Grid>
-                        <Grid item xs={4} className="iq-grid-item creative wow fadeInUp">
+                        <Grid item xs={12} sm={4} lg={4} xl={4} className="iq-grid-item creative wow fadeInUp">
                             <a href="porfolio-detail.html">
                             <div className="iq-portfolio">
                                 <img src={PortfolioImg} className="img-fluid" alt="portfolio" />
@@ -129,7 +129,7 @@ export default class PortfolioGrid extends React.Component {
                             </div>
                             </a>
                         </Grid>
-                        <Grid item xs={4} className="iq-grid-item creative wow fadeInUp">
+                        <Grid item xs={12} sm={4} lg={4} xl={4} className="iq-grid-item creative wow fadeInUp">
                         <a href="porfolio-detail.html">
                         <div className="iq-portfolio">
                             <img src={PortfolioImg} className="img-fluid" alt="portfolio" />
@@ -140,7 +140,7 @@ export default class PortfolioGrid extends React.Component {
                         </div>
                         </a>
                     </Grid>
-                    <Grid item xs={4} className="iq-grid-item creative wow fadeInUp">
+                    <Grid item xs={12} sm={4} lg={4} xl={4} className="iq-grid-item creative wow fadeInUp">
                         <a href="porfolio-detail.html">
                         <div className="iq-portfolio">
                             <img src={PortfolioImg} className="img-fluid" alt="portfolio" />

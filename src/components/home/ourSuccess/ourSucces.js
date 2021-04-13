@@ -2,6 +2,7 @@ import React from 'react';
 import OurSuccessImg from './2.jpg';
 
 export default class OurSucces extends React.Component {
+   
     render() {
         return (
             <section className="iq-choose-info position-relative">
