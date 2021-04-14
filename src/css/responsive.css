@@ -1944,6 +1944,15 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 		padding: 0;
 	}
 
+	.our-success {
+		text-align: center;
+	}
+
+	.footer-link{
+		margin-top: 20px;
+		text-align: center;
+	}
+
 	header.header-two .mega-menu .menu-search-bar {
 		right: 20px;
 	}
