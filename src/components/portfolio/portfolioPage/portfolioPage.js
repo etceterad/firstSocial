@@ -23,12 +23,6 @@ export default class PortfolioPage extends React.Component {
       }).init();
     }
 
-    // setActiveClass() {
-    //     this.setState({
-    //         activeClass: true
-    //     })
-    // }
-
     render() {
         return (
             <>

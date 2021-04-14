@@ -24,9 +24,9 @@ export default class Footer extends React.Component {
                   <input type="email" className="form-control position-relative subscription-email  mb-0" placeholder="Enter Email" />
                 </div>
                <a className="slide-button button bt-subscribe subscription-button " href=" ">
-                         <div className="first">Subscribe</div>
-                         <div className="second">Subscribe</div>
-                       </a>
+                <div className="first">Subscribe</div>
+                <div className="second">Subscribe</div>
+              </a>
               </form>
             </div>
           </div>
@@ -41,16 +41,14 @@ export default class Footer extends React.Component {
               </div>
               <div className="footer-copyright mb-4 iq-fw-5 mt-3">©Copyrights 2019 TikTokFans</div>
               <div>
-
-              <div className="social-media d-inline-block float-left ml-4">
-                <ul className="social">
-                  <li><a href=" "><i className="fab fa-facebook-f iq-fw-6"></i></a></li>
-                  <li><a href=" "><i className="fab fa-twitter iq-fw-6"></i></a></li>
-                  <li><a href=" "><i className="fab fa-linkedin iq-fw-6"></i></a></li>
-                </ul>
+                <div className="social-media d-inline-block float-left ml-4">
+                  <ul className="social">
+                    <li><a href=" "><i className="fab fa-facebook-f iq-fw-6"></i></a></li>
+                    <li><a href=" "><i className="fab fa-twitter iq-fw-6"></i></a></li>
+                    <li><a href=" "><i className="fab fa-linkedin iq-fw-6"></i></a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-
               <div className="contact mt-4 d-inline-block">
                 <a href="tel:0123456789"> <i className="fa fa-phone"></i><span className="iq-fw-5"> 0 123 456 789</span></a>
                 <div className="email d-inline-block"><a href="Mail:mail@TikTokFans.com"> mail@TikTokFans.com</a></div>
@@ -62,7 +60,7 @@ export default class Footer extends React.Component {
                 <OwlCarousel id="iqtestimonials" className="owl-carousel riq-mt-40" autoplay={true} loop={true} nav={false} dots={false} items={1} margin={15}>
                   <div className="item">
                     <div className="desc">
-                      <p className="mb-0">Progravida <span className="text-black iq-fw-7">#nibh vel velit auctor</span> alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,Lorem Ipsum. <a href="javascript:void(0)#" className="text-black iq-fw-7">https://iqonicthemes.com</a></p>
+                      <p className="mb-0">Progravida <span className="text-black iq-fw-7">#nibh vel velit auctor</span> alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,Lorem Ipsum. <a href=" " className="text-black iq-fw-7">https://iqonicthemes.com</a></p>
                     </div>
                     <div className="author">
                       <div className="float-left d-flex mr-3">
@@ -70,7 +68,7 @@ export default class Footer extends React.Component {
                       </div>
                       <div className=" float-left ">
                         <div className="overview">
-                          <a>
+                          <a href=" ">
                             <h6 className="name text-black mb-0">iqonicthemes</h6>
                           </a>
                           <div className="details">2 Months Ago</div>
@@ -80,7 +78,7 @@ export default class Footer extends React.Component {
                   </div>
                   <div className="item">
                     <div className="desc">
-                      <p className="mb-0">Progravida <span className="text-black iq-fw-7">#nibh vel velit auctor</span> alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,Lorem Ipsum. <a href="javascript:void(0)" className="text-black iq-fw-7">https://iqonicthemes.com</a></p>
+                      <p className="mb-0">Progravida <span className="text-black iq-fw-7">#nibh vel velit auctor</span> alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,Lorem Ipsum. <a href=" " className="text-black iq-fw-7">https://iqonicthemes.com</a></p>
                     </div>
                     <div className="author">
                       <div className="float-left d-flex mr-3">
@@ -96,7 +94,7 @@ export default class Footer extends React.Component {
                   </div>
                   <div className="item">
                     <div className="desc">
-                      <p className="mb-0">Progravida <span className="text-black iq-fw-7">#nibh vel velit auctor</span> alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,Lorem Ipsum. <a href="javascript:void(0)" className="text-black iq-fw-7">https://iqonicthemes.com</a></p>
+                      <p className="mb-0">Progravida <span className="text-black iq-fw-7">#nibh vel velit auctor</span> alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,Lorem Ipsum. <a href=" " className="text-black iq-fw-7">https://iqonicthemes.com</a></p>
                     </div>
                     <div className="author">
                       <div className="float-left d-flex mr-3">

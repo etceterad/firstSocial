@@ -11,13 +11,13 @@ export default class Footer extends React.Component {
                     <div className="row ">
                     <div className=" col-lg-5 col-md-6  iq-rmt-40">
                         <div className="iq-footer-logo mb-5">
-                            <Link to="/"><img src={LogoFooter} className="img-fluid" alt="image" /></Link>
+                            <Link to="/"><img src={LogoFooter} className="img-fluid" alt=" footer" /></Link>
                         </div>
                         <form className="position-relative subscribe-form">
                             <div className="form-group mb-0">
                                 <input type="email" className="form-control position-relative subscription-email  mb-0" placeholder="Enter Email" />
                             </div>
-                            <a className="slide-button button bt-subscribe subscription-button " href="javascript:void(0)">
+                            <a className="slide-button button bt-subscribe subscription-button " href=" ">
                                 <div className="first">Subscribe</div>
                                 <div className="second">Subscribe</div>
                             </a>

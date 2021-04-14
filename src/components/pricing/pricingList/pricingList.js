@@ -1,20 +1,39 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PricingImg from '../../../images/pricing/1.png';
 import PricingModal from '../pricingModal';
+import PricingListItem from '../pricingListItem';
 import '../pricingModal/pricingModal.css';
 
-const PricingList = () =>{
-    const [modalActive, setModalActive] = useState(false);
-    const [nameActive, setNameActive] = useState("");
-    const [priceActive, setPriceActive] = useState("");
+export default class PricingList extends React.Component{
+    constructor(props) {
+        super(props)
 
-    const modalFunction = (e, nameActive, priceActive) => {
-        setModalActive(true);
-        setNameActive(nameActive);
-        setPriceActive(priceActive);
+        this.state = {
+            modalActive: false,
+            nameActive: "",
+            priceActive: ""
+        }
+
+        this.activateModal = this.activateModal.bind(this);
+        this.resetActive = this.resetActive.bind(this);
+    }
+
+    resetActive() {
+        this.setState({
+            modalActive: false
+        })
+    }
+
+    activateModal(name, price, e){
+        this.setState({
+            modalActive: true,
+            nameActive: name,
+            priceActive: price
+        });
         e.preventDefault();
     }
 
+    render() {
         return(
             <section className="iq-pricingplan">
                 <div className="container">
@@ -26,219 +45,74 @@ const PricingList = () =>{
                         </div>
                         </div>
                     </div>
-                    </div>
-                    <div className="container">
+                </div>
+                <div className="container">
                     <div className="row  no-gutters ">
                         <div className="col-lg-12">
-                        <div className=" pricing-info wow fadeInUp">
-                            <div className="row">
-                            <div className="col-lg-2 col-sm-12"> <img src={PricingImg} className="img-fluid" alt="list" /></div>
-                            <div className="col-lg-7 col-sm-12 align-self-center">
-                                <div className="pricing-plan">
-                                <div className="section-title mb-3">
-                                    <h3 className="title iq-fw-8 ">Starter</h3>
-                                </div>
-                                <div className="row ">
-                                    <div className="col-sm-12">
-                                    <ul className="pricing-list">
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Email Marketing</li>
-                                        <li className="item"><i className="fas fa-times-circle main-color mr-2"></i>Content Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle  text-green mr-2"></i>Voice Optimize</li>
-                                        <li className="item"><i className="fas fa-times-circle main-color mr-2"></i>SEO Consulting</li>
-                                        <li className="item"><i className="fas fa-times-circle main-color mr-2"></i>Video Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Advertising</li>
-                                    </ul>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-sm-12 text-center align-self-center">
-                                <h2 className="price iq-fw-8">$29 <span className="text-gray iq-font-18 iq-fw-6">/ Frist payment </span></h2>
-                                <a className="slide-button button popup-pusrchase-win" href=" " id="starter" onClick={(e) => modalFunction(e, "Starter", 29)}>
-                                    <div className="first">Purchase</div>
-                                    <div className="second">Purchase</div>
-                                </a>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div className="col-lg-12">
-                        <div className=" pricing-info mt-4 mb-4 wow fadeInUp">
-                            <div className="row">
-                            <div className="col-lg-2 col-sm-12"> <img src={PricingImg} className="img-fluid" alt="list" /></div>
-                            <div className="col-lg-7 col-sm-12 align-self-center">
-                                <div className="pricing-plan">
-                                <div className="section-title mb-3">
-                                    <h3 className="title iq-fw-8 ">Enterprice</h3>
-                                </div>
-                                <div className="row ">
-                                    <div className="col-sm-12">
-                                    <ul className="pricing-list">
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Email Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Content Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Voice Optimize</li>
-                                        <li className="item"><i className="fas fa-times-circle main-color mr-2"></i>SEO Consulting</li>
-                                        <li className="item"><i className="fas fa-times-circle main-color mr-2"></i>Video Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Advertising</li>
-                                    </ul>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-sm-12 text-center align-self-center">
-                                <h2 className="price iq-fw-8">$49 <span className="text-gray iq-font-18 iq-fw-6">/ Frist payment </span></h2>
-                                <a className="slide-button button popup-pusrchase-win" href="##" id="enterprice" onClick={(e) => modalFunction(e, "Enterprice", 49)}>
-                                <div className="first">Purchase</div>
-                                <div className="second">Purchase</div>
-                                </a>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div className="col-lg-12">
-                        <div className=" pricing-info wow fadeInUp">
-                            <div className="row">
-                            <div className="col-lg-2 col-sm-12"> <img src={PricingImg} className="img-fluid" alt="list" /></div>
-                            <div className="col-lg-7 col-sm-12 align-self-center">
-                                <div className="pricing-plan">
-                                <div className="section-title mb-3">
-                                    <h3 className="title iq-fw-8 ">Professional</h3>
-                                </div>
-                                <div className="row ">
-                                    <div className="col-sm-12">
-                                    <ul className="pricing-list">
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Email Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Content Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle  text-green mr-2"></i>Voice Optimize</li>
-                                        <li className="item"><i className="fa fa-check-circle  text-green mr-2"></i>SEO Consulting</li>
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Video Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Advertising</li>
-                                    </ul>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-sm-12 text-center align-self-center">
-                                <h2 className="price iq-fw-8">$99 <span className="text-gray iq-font-18 iq-fw-6">/ Frist payment </span></h2>
-                                <a className="slide-button button popup-pusrchase-win" href="##" id="professional" onClick={(e) => modalFunction(e, "Professional", 99)}>
-                                <div className="first">Purchase</div>
-                                <div className="second">Purchase</div>
-                                </a>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div className="col-lg-12">
-                        <div className=" pricing-info wow fadeInUp">
-                            <div className="row">
-                            <div className="col-lg-2 col-sm-12"> <img src={PricingImg} className="img-fluid" alt="list" /></div>
-                            <div className="col-lg-7 col-sm-12 align-self-center">
-                                <div className="pricing-plan">
-                                <div className="section-title mb-3">
-                                    <h3 className="title iq-fw-8 ">Luxury</h3>
-                                </div>
-                                <div className="row ">
-                                    <div className="col-sm-12">
-                                    <ul className="pricing-list">
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Email Marketing</li>
-                                        <li className="item"><i className="fas fa-times-circle main-color mr-2"></i>Content Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle  text-green mr-2"></i>Voice Optimize</li>
-                                        <li className="item"><i className="fas fa-times-circle main-color mr-2"></i>SEO Consulting</li>
-                                        <li className="item"><i className="fas fa-times-circle main-color mr-2"></i>Video Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Advertising</li>
-                                    </ul>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-sm-12 text-center align-self-center">
-                                <h2 className="price iq-fw-8">$149 <span className="text-gray iq-font-18 iq-fw-6">/ Frist payment </span></h2>
-                                <a className="slide-button button popup-pusrchase-win" href="##" id="luxury" onClick={(e) => modalFunction(e, "Luxury", 149)}>
-                                <div className="first">Purchase</div>
-                                <div className="second">Purchase</div>
-                                </a>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div className="col-lg-12">
-                        <div className=" pricing-info mt-4 mb-4 wow fadeInUp">
-                            <div className="row">
-                            <div className="col-lg-2 col-sm-12"> <img src={PricingImg} className="img-fluid" alt="list" /></div>
-                            <div className="col-lg-7 col-sm-12 align-self-center">
-                                <div className="pricing-plan">
-                                <div className="section-title mb-3">
-                                    <h3 className="title iq-fw-8 ">VIP</h3>
-                                </div>
-                                <div className="row ">
-                                    <div className="col-sm-12">
-                                    <ul className="pricing-list">
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Email Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Content Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Voice Optimize</li>
-                                        <li className="item"><i className="fas fa-times-circle main-color mr-2"></i>SEO Consulting</li>
-                                        <li className="item"><i className="fas fa-times-circle main-color mr-2"></i>Video Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Advertising</li>
-                                    </ul>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-sm-12 text-center align-self-center">
-                                <h2 className="price iq-fw-8">$199 <span className="text-gray iq-font-18 iq-fw-6">/ Frist payment </span></h2>
-                                <a className="slide-button button popup-pusrchase-win" href="##" id="vip" onClick={(e) => modalFunction(e, "VIP", 199)}>
-                                <div className="first">Purchase</div>
-                                <div className="second">Purchase</div>
-                                </a>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div className="col-lg-12">
-                        <div className=" pricing-info wow fadeInUp">
-                            <div className="row">
-                            <div className="col-lg-2 col-sm-12"> <img src={PricingImg} className="img-fluid" alt="list" /></div>
-                            <div className="col-lg-7 col-sm-12 align-self-center">
-                                <div className="pricing-plan">
-                                <div className="section-title mb-3">
-                                    <h3 className="title iq-fw-8 ">Godlike</h3>
-                                </div>
-                                <div className="row ">
-                                    <div className="col-sm-12">
-                                    <ul className="pricing-list">
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Email Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Content Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle  text-green mr-2"></i>Voice Optimize</li>
-                                        <li className="item"><i className="fa fa-check-circle  text-green mr-2"></i>SEO Consulting</li>
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Video Marketing</li>
-                                        <li className="item"><i className="fa fa-check-circle text-green mr-2"></i>Advertising</li>
-                                    </ul>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-sm-12 text-center align-self-center">
-                                <h2 className="price iq-fw-8">$299 <span className="text-gray iq-font-18 iq-fw-6">/ First payment </span></h2>
-                                <a className="slide-button button popup-pusrchase-win" href="##" id="godlike" onClick={(e) => modalFunction(e, "Godlike", 299)}>
-                                <div className="first">Purchase</div>
-                                <div className="second">Purchase</div>
-                                </a>
-                            </div>
-                            </div>
+                            <PricingListItem
+                                pricingListImg={PricingImg}
+                                optionContentMarketing={false}
+                                optionConsulting={false}
+                                optionVideoMarketing={false}
+                                itemName={"Starter"}
+                                itemPrice={29} 
+                                activateModal={(e) => this.activateModal("Starter", 29, e)}
+                            />
+                            <PricingListItem
+                                pricingListImg={PricingImg}
+                                optionContentMarketing={false}
+                                optionConsulting={false}
+                                optionVideoMarketing={false}
+                                itemName={"Enterprice"}
+                                itemPrice={49} 
+                                activateModal={(e) => this.activateModal("Enterprice", 49, e)}
+                            />
+                            <PricingListItem
+                                pricingListImg={PricingImg}
+                                optionContentMarketing={false}
+                                optionConsulting={false}
+                                optionVideoMarketing={false}
+                                itemName={"Professional"}
+                                itemPrice={99} 
+                                activateModal={(e) => this.activateModal("Professional", 99, e)}
+                            />
+                            <PricingListItem
+                                pricingListImg={PricingImg}
+                                optionContentMarketing={false}
+                                optionConsulting={false}
+                                optionVideoMarketing={false}
+                                itemName={"Luxury"}
+                                itemPrice={149} 
+                                activateModal={(e) => this.activateModal("Luxury", 149, e)}
+                            />
+                            <PricingListItem
+                                pricingListImg={PricingImg}
+                                optionContentMarketing={false}
+                                optionConsulting={false}
+                                optionVideoMarketing={false}
+                                itemName={"VIP"}
+                                itemPrice={199} 
+                                activateModal={(e) => this.activateModal("VIP", 199, e)}
+                            />
+                            <PricingListItem
+                                pricingListImg={PricingImg}
+                                optionContentMarketing={false}
+                                optionConsulting={false}
+                                optionVideoMarketing={false}
+                                itemName={"Godlike"}
+                                itemPrice={299} 
+                                activateModal={(e) => this.activateModal("Godlike", 299, e)}
+                            />
                         </div>
                     </div>
                 </div>
-            </div>
             <PricingModal
-                active={modalActive}
-                setActive={setModalActive}
-                name={nameActive}
-                setName={setNameActive}
-                price={priceActive}
-                setPrice={setPriceActive}
+                resetActive={this.resetActive}
+                active={this.state.modalActive}
+                name={this.state.nameActive}
+                price={this.state.priceActive}
             />
         </section>
         )
+    }
 }
-
-export default PricingList;

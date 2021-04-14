@@ -1731,7 +1731,7 @@ h2 > sup {
 	position: relative;
 	background: #fff;
 	padding: 15px;
-	margin-bottom: 0px;
+	margin-bottom: 20px;
 	-webkit-transition: all 0.5s ease-out 0s;
 	-moz-transition: all 0.5s ease-out 0s;
 	-ms-transition: all 0.5s ease-out 0s;
@@ -5404,6 +5404,10 @@ How work section
 	padding: 35px;
 	position: relative;
 	background: #fff;
+}
+
+.purchase-popup__form-label{
+	padding-left: 15px;
 }
 
 .hidden{ 

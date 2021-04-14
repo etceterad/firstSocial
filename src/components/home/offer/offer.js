@@ -14,11 +14,11 @@ export default class Offer extends React.Component {
         // this.toggleTabs = this.toggleTabs.bind(this);
     }
 
-    toggleTabs(index) {
+    toggleTabs(index, e) {
         this.setState({
             toggleState: index
-        })
-        console.log(index)
+        });
+        e.preventDefault();
     }
 
     render() {
@@ -41,9 +41,9 @@ export default class Offer extends React.Component {
                             <div className="row">
                                 <div className="col-sm-12">
                                     <ul className="about-us text-center list-inline">
-                                        <li className="list-inline-item"><a href="##" onClick={() => this.toggleTabs(1)} className={this.state.toggleState === 1 ? "active" : ""}><span>Subscribers</span></a></li>
-                                        <li className="list-inline-item"><a href="##" onClick={() => this.toggleTabs(2)} className={this.state.toggleState === 2 ? "active" : ""}><span>Likes</span></a></li>
-                                        <li className="list-inline-item"><a href="##" onClick={() => this.toggleTabs(3)} className={this.state.toggleState === 3 ? "active" : ""}><span>Views</span></a></li>
+                                        <li className="list-inline-item"><a href=" " onClick={(e) => this.toggleTabs(1, e)} className={this.state.toggleState === 1 ? "active" : ""}><span>Subscribers</span></a></li>
+                                        <li className="list-inline-item"><a href=" " onClick={(e) => this.toggleTabs(2, e)} className={this.state.toggleState === 2 ? "active" : ""}><span>Likes</span></a></li>
+                                        <li className="list-inline-item"><a href=" " onClick={(e) => this.toggleTabs(3, e)} className={this.state.toggleState === 3 ? "active" : ""}><span>Views</span></a></li>
                                     </ul>
                                 </div>
                             </div>
