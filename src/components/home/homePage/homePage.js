@@ -2,6 +2,7 @@ import React from 'react';
 import OurSuccess from '../ourSuccess';
 import OurAchievments from '../ourAchievments';
 import OurServices from '../../ourServices';
+import DoneProjects from '../doneProjects';
 // import DoneProjects from '../doneProjects';
 import WOW from 'wowjs';
 import OurTestimonials from '../ourTestimonials';
@@ -30,6 +31,7 @@ export default class HomePage extends React.Component {
                     <OurSuccess />
                     <OurAchievments />
                     <OurServices />
+                    <DoneProjects />
                     <OurTestimonials />
                 </div>
                 <Footer />
