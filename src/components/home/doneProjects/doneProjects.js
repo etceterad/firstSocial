@@ -42,6 +42,7 @@ export default class DoneProjects extends React.Component {
                                 itemsMobile={1} 
                                 itemsMobileSm={1} 
                                 margin={30}
+                                autoWidth={true}
                             >
                                 <DoneProjectsItem projectsItemImg={FirstImg} />
                                 <DoneProjectsItem projectsItemImg={FirstImg} />
