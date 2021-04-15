@@ -1,8 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import LogoExmpl from '../headerNav/logoExmpl.png';
-import HeaderHamburger from '../../images/tiktokfans-hamburger.png';
-import HeaderHamburgerClose from '../../images/tiktokfans-close.png';
 
 export default class Header extends React.Component {
     listener = null;
@@ -12,11 +10,11 @@ export default class Header extends React.Component {
 
         this.state = {
             activeMenu: false,
-            hiddenButton: true,
             nav: false
         }
 
         this.handleScroll = this.handleScroll.bind(this);
+        this.setActiveMenu = this.setActiveMenu.bind(this);
     }
 
     componentDidMount() {
@@ -40,39 +38,9 @@ export default class Header extends React.Component {
     }
 
     setActiveMenu() {
-        this.setState({
-            activeMenu: true
-        })
-    }
-
-    resetActiveMenu() {
-        this.setState ({
-            activeMenu: false
-        })
-    }
-
-    setHiddenButton() {
-        this.setState({
-            hiddenButton: false
-        })
-    }
-
-    resetHiddenButton() {
-        this.setState({
-            hiddenButton: true
-        })
-    }
-
-    functionForHamburger(e) {
-        this.setActiveMenu()
-        this.setHiddenButton()
-        e.preventDefault()
-    }
-
-    functionForHamburgerClose(e) {
-        this.resetHiddenButton()
-        this.resetActiveMenu()
-        e.preventDefault()
+        this.setState(prevState => ({
+            activeMenu: !prevState.activeMenu
+        }))
     }
     
     render() {
@@ -91,12 +59,10 @@ export default class Header extends React.Component {
                                                 <Link to="/"><img src={LogoExmpl} alt="logo" className="img-fluid" /></Link>
                                             </li>
                                             </ul>
-                                            <a href=" " onClick={(e) => this.functionForHamburgerClose(e)}>
-                                                <img className={this.state.hiddenButton ? "header-hamburger-close hidden-btn" : "header-hamburger-close"} src={HeaderHamburgerClose} alt="hamburger-close"/>
-                                            </a>
-                                            <a href=" " onClick={(e) => this.functionForHamburger(e)}>
-                                                <img className={this.state.hiddenButton ? "header-hamburger" : "header-hamburger hidden-btn"} src={HeaderHamburger} alt="hamburger"/>
-                                            </a>
+                                            <div className={this.state.activeMenu ? "menu-btn open" : "menu-btn"} onClick={this.setActiveMenu}>
+                                                <div className="menu-btn__burger">
+                                                </div>
+                                            </div>
                                             <ul className="menu-search-bar">
                                             <li className="menu-contact iq-fw-5"><a href="tel:0123456789" ><i className="fas fa-phone pr-1 "></i> 0 123 456 789</a></li>
                                             </ul>

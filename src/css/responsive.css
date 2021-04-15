@@ -521,6 +521,10 @@ header.header-four  .container-fluid {
 		display: none;
 	}
 
+	.menu-btn{
+		display: block;
+	}
+
 	.mega-menu .menu-search-bar.active input {
 		padding-right: 0;
 	}
@@ -745,18 +749,9 @@ header.header-four  .container-fluid {
 		margin: 0;
 	}
 
-	.header-hamburger {
-		visibility: visible;
+	.menu-btn{
 		left: 93%;
-		width: 50px;
-		height: 44px;
-	}
-
-	.header-hamburger-close{
-		visibility: visible;
-		left: 93%;
-		width: 50px;
-		height: 44px;
+		top: 25%;
 	}
 
 	.iq-rocket {
@@ -1480,18 +1475,10 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 		margin: 0;
 	}
 
-	.header-hamburger {
-		visibility: visible;
-		left: 93%;
-		width: 50px;
-		height: 44px;
-	}
 
-	.header-hamburger-close{
-		visibility: visible;
-		left: 93%;
-		width: 50px;
-		height: 44px;
+	.menu-btn{
+		left: 92%;
+		top: 20%;
 	}
 
 	#iq-tab .tab-content {
@@ -1881,17 +1868,10 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 		transform: none;
 		visibility: visible;
 	}
-	.header-hamburger-close {
+
+	.menu-btn {
 		top: 15%;
-		width: 48px;
-		height: 42px;
-		left:90%;
-	}
-	.header-hamburger {
-		top: 15%;
-		width: 48px;
-		height: 42px;
-		left: 90%;
+		left: 89%;
 	}
 	
 
@@ -1928,6 +1908,11 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 		width: 100%;
 		text-align: left;
 	}
+
+	header.sticked{ 
+		padding-bottom: 10px;
+	}
+
 		header.header-four .header-top-bar .social-bar {
 		display: none;
 	}
@@ -1949,8 +1934,12 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 	}
 
 	.footer-link{
-		margin-top: 20px;
+		margin-top: 15px;
 		text-align: center;
+	}
+
+	.menu-btn {
+		left: 85%;
 	}
 
 	header.header-two .mega-menu .menu-search-bar {
@@ -2113,19 +2102,6 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 		-ms-transform: translate(0, 0px);
 		transform: none;
 		visibility: visible;
-	}
-
-	.header-hamburger-close {
-		left: 85%;
-		width: 44px;
-		height: 38px;
-		top: 0;
-	}
-	.header-hamburger{
-		left: 85%;
-		width: 44px;
-		height: 38px;
-		top: 0;
 	}
 
 	footer .form-control {

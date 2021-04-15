@@ -88,6 +88,10 @@ header .mega-menu * {
 	text-transform: capitalize;
 }
 
+.menu-btn{
+	display: none;
+}
+
 header.sticked{
 	background-color: #fff!important;
 	position: fixed!important;
@@ -566,24 +570,54 @@ header.header-four .mega-menu.desktopTopFixed .menu-list-items, header.header-fo
 	box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
 }
 
-.header-hamburger {
-	visibility: hidden;
-	left: 85%;
+.menu-btn {
 	position: absolute;
-	top: 0%;
-	transition: all 0.4s ease;
+	left: 85%;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	transition: all 0.4s ease-in-out;
+	align-items: center;
 }
 
-.header-hamburger-close {
-	visibility: hidden;
-	left: 85%;
-	position: absolute;
-	top: 0%;
-	transition: all 0.4s ease;
+.menu-btn__burger{
+	width: 50px;
+	height: 5px;
+	border-radius: 5px;
+	transition: ease 0.4s ease-in-out;
+	background: #33E2A0;	
 }
 
-.hidden-btn{
-	visibility: hidden!important;
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+	content: " ";
+	position: absolute;
+	width: 50px;
+	height: 5px;
+	border-radius: 5px;
+	background: #33E2A0;
+	transition: all 0.4s ease-in-out;
+}
+
+.menu-btn__burger::before {
+	transform: translateY(14px);
+}
+
+.menu-btn__burger::after {
+	transform: translateY(28px);
+}
+
+.menu-btn.open .menu-btn__burger::before {
+	transform: translateX(-50px);
+	background: transparent;
+}
+
+.menu-btn.open .menu-btn__burger {
+	transform: rotate(45deg) translate(10px, 5px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+	transform: rotate(-90deg) translate(0px, 0px);
 }
 
 /*------------------
@@ -609,6 +643,7 @@ Solution Section
 	-webkit-transition: all 0.5s ease-out 0s;
 	-moz-transition: all 0.5s ease-out 0s;
 	-ms-transition: all 0.5s ease-out 0s;
+	
 	-o-transition: all 0.5s ease-out 0s;
 	transition: all 0.5s ease-out 0s;
 }
