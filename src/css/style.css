@@ -760,7 +760,7 @@ Solution Section
 	border-top: 1px solid #1b0e3d;
 }
 
-.iq-choose-info .iq-ad-title {
+.iq-ad-block .ad-title {
 	cursor: pointer;
 	position: relative;
 }

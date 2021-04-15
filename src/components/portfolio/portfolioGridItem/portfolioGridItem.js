@@ -7,7 +7,6 @@ export default class PortfolioGridItem extends React.Component {
         
         return(
             <Grid item xs={12} sm={4} lg={4} xl={4} className="iq-grid-item creative wow fadeInUp">
-                <a href="porfolio-detail.html">
                 <div className="iq-portfolio">
                     <img src={gridItemImg} className="img-fluid" alt="portfolio" />
                     <div className="portfolio-info">
@@ -15,7 +14,6 @@ export default class PortfolioGridItem extends React.Component {
                     <a href=" " className="text-uppercase text-gray float-right">Design</a>
                     </div>
                 </div>
-                </a>
             </Grid>
         )
     }
