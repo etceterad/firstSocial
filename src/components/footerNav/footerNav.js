@@ -5,8 +5,7 @@ export default class FooterNav extends React.Component {
     render() {
         return(
             <>
-                <div className="col-lg-2 col-12 col-md-12 footer-link  iq-rmt-40">
-                    <div className="col-6">
+                    <div className="col-6 col-lg-2 col-md-6 col-6 footer-link iq-rmt-40">
                         <h5 className="iq-fw-7 ">Links</h5>
                         <ul className="list-inline">
                             <li className="list-item"><Link to="/">Home</Link></li>
@@ -25,7 +24,6 @@ export default class FooterNav extends React.Component {
                             <li className="list-item"><Link to="/service">Our Benefits</Link></li>
                         </ul>
                     </div>
-                </div>
             </>
         )
     }
