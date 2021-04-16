@@ -52,7 +52,7 @@ export default class DoneProjects extends React.Component {
                                 <DoneProjectsItem projectsItemImg={FirstImg} />
                                 <DoneProjectsItem projectsItemImg={FirstImg} />
                                 <DoneProjectsItem projectsItemImg={FirstImg} />
-                            </OwlCarousel>
+                                </OwlCarousel>
                         </div>
                     </div>
                 </div>

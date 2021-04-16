@@ -4,6 +4,23 @@ import LogoFooter from './logo.png';
 import {Link} from 'react-router-dom'
 
 export default class Footer extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            email : ""
+        }
+
+        this.handleEmailInput = this.handleEmailInput.bind(this)
+    }
+
+    handleEmailInput(e) {
+        console.log(this.state.email)
+        this.setState({
+            email: e.target.value
+        })
+    }
+
     render() {
         return (
             <footer className="footer-three position-relative">
@@ -15,7 +32,7 @@ export default class Footer extends React.Component {
                         </div>
                         <form className="position-relative subscribe-form">
                             <div className="form-group mb-0">
-                                <input type="email" className="form-control position-relative subscription-email  mb-0" placeholder="Enter Email" />
+                                <input type="email" className="form-control position-relative subscription-email mb-0" onChange={this.handleEmailInput} placeholder="Enter Email" />
                             </div>
                             <a className="slide-button button bt-subscribe subscription-button " href=" ">
                                 <div className="first">Subscribe</div>

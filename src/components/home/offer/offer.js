@@ -1,4 +1,5 @@
 import React from 'react';
+import OfferTabsItem from '../offerTabsItem';
 import Background13 from './images/13.png';
 import OfferSubscribersImg from './images/5.png';
 import OfferLikesImg from './images/06.png';
@@ -7,11 +8,10 @@ import OfferViewsImg from './images/08.png';
 export default class Offer extends React.Component {
     constructor(props) {
         super(props)
+
          this.state = {
             toggleState: 1
          }
-
-        // this.toggleTabs = this.toggleTabs.bind(this);
     }
 
     toggleTabs(index, e) {
@@ -48,75 +48,24 @@ export default class Offer extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className={this.state.toggleState === 1 ? "main-form__tab active-tab" : "main-form__tab"}>
-                            <div className="main-form__tab-calculate wow fadeInLeft">
-                                <h3 className="main-form__calculate-title">
-                                You want Subscribers?
-                                </h3>
-                                <form action="">
-                                    <input type="text" className="main-form__input" placeholder="Your TIK-TOK Login" />
-                                    <input type="text" className="main-form__input" placeholder="Number of desired Subscribers" /><br/>
-                                    <div className="main-form__calculated-area">
-                                        <div className="calculated-area__button">
-                                            <button type="submit" className="button form-button">BUY</button>
-                                        </div>   
-                                        <div className="calculated-area__price">
-                                            <label htmlFor="calculated-price">Price:</label>
-                                            <output id="calculated-price">49$</output>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div className="main-form__tab-img wow fadeInRight">
-                                <img src={OfferSubscribersImg} alt="img" />
-                            </div>
-                        </div>
-                        <div className={this.state.toggleState === 2 ? "main-form__tab active-tab" : "main-form__tab"}>
-                            <div className="main-form__tab-calculate wow fadeInLeft">
-                                <h3 className="main-form__calculate-title">
-                                You want Likes?
-                                </h3>
-                                <form action="">
-                                <input type="text" className="main-form__input" placeholder="Your TIK-TOK Login" />
-                                <input type="text" className="main-form__input" placeholder="Number of desired Likes" /><br />
-                                <div className="main-form__calculated-area">
-                                    <div className="calculated-area__button">
-                                        <button type="submit" className="button form-button">BUY</button>
-                                    </div>   
-                                    <div className="calculated-area__price">
-                                        <label htmlFor="calculated-price">Price:</label>
-                                        <output id="calculated-price">49$</output>
-                                    </div>
-                                </div>
-                                </form>
-                            </div>
-                            <div className="main-form__tab-img likes-img wow fadeInRight">
-                                <img src={OfferLikesImg} alt="img" />
-                            </div>
-                        </div>
-                        <div className={this.state.toggleState === 3 ? "main-form__tab active-tab" : "main-form__tab"}>
-                            <div className="main-form__tab-calculate wow fadeInLeft">
-                                <h3 className="main-form__calculate-title">
-                                You want Views?
-                                </h3>
-                                <form action="">
-                                    <input type="text" className="main-form__input" placeholder="Your TIK-TOK Login" />
-                                    <input type="text" className="main-form__input" placeholder="Number of desired Views" /><br />
-                                    <div className="main-form__calculated-area">
-                                        <div className="calculated-area__button">
-                                            <button type="submit" className="button form-button">BUY</button>
-                                        </div>   
-                                        <div className="calculated-area__price">
-                                            <label htmlFor="calculated-price">Price:</label>
-                                            <output id="calculated-price">49$</output>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div className="main-form__tab-img views-img wow fadeInRight">
-                                <img src={OfferViewsImg} alt="img"/>
-                            </div>
-                        </div>
+                        <OfferTabsItem 
+                            tabsImg={OfferSubscribersImg}
+                            formTitle="You want Subscribers?"   
+                            placeholderValue="Subscribers"
+                            tabsToggleClass={this.state.toggleState === 1 ? "main-form__tab active-tab" : "main-form__tab"}                     
+                        />
+                        <OfferTabsItem 
+                            tabsImg={OfferLikesImg}
+                            formTitle="You want Likes?"   
+                            placeholderValue="Likes"
+                            tabsToggleClass={this.state.toggleState === 2 ? "main-form__tab active-tab" : "main-form__tab"}                     
+                        />
+                        <OfferTabsItem 
+                            tabsImg={OfferViewsImg}
+                            formTitle="You want Views?"   
+                            placeholderValue="Views"
+                            tabsToggleClass={this.state.toggleState === 3 ? "main-form__tab active-tab" : "main-form__tab"}                     
+                        />
                     </div>
                     </div>
                 </section>
