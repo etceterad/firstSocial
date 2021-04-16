@@ -2310,6 +2310,7 @@ footer .fshap-after {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	z-index: 999;
 	margin: 0 auto;
 	position: relative;
 	background: url('../images/footer/5.jpg')no-repeat 0 bottom;
