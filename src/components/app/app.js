@@ -36,7 +36,7 @@ export default class App extends React.Component {
                     <Route path="/" exact>
                     <HomePage />
                     </Route>
-                    <Route pat="/about-us"><AboutUsPage /></Route>
+                    <Route path="/about-us"><AboutUsPage /></Route>
                     <Route path="/portfolio"><PortfolioPage /></Route>
                     <Route path="/faq"><FaqPage /></Route>
                     <Route path="/pricing"><PricingPage /></Route>
