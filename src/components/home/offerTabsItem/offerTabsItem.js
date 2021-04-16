@@ -28,7 +28,7 @@ export default class OfferTabsItem extends React.Component {
     }
 
     render() {
-        const {tabsImg, formTitle, placeholderValue, tabsToggleClass} = this.props;
+        const {tabsImg, formTitle, placeholderValue, tabsToggleClass, imageClass} = this.props;
 
         return(
             <div className={tabsToggleClass}>
@@ -50,7 +50,7 @@ export default class OfferTabsItem extends React.Component {
                         </div>
                     </form>
                 </div>
-                <div className="main-form__tab-img wow fadeInRight">
+                <div className={imageClass}>
                     <img src={tabsImg} alt="img" />
                 </div>
             </div>       

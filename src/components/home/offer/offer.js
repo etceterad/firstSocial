@@ -52,19 +52,22 @@ export default class Offer extends React.Component {
                             tabsImg={OfferSubscribersImg}
                             formTitle="You want Subscribers?"   
                             placeholderValue="Subscribers"
-                            tabsToggleClass={this.state.toggleState === 1 ? "main-form__tab active-tab" : "main-form__tab"}                     
+                            tabsToggleClass={this.state.toggleState === 1 ? "main-form__tab active-tab" : "main-form__tab"}  
+                            imageClass="main-form__tab-img wow fadeInRight"                   
                         />
                         <OfferTabsItem 
                             tabsImg={OfferLikesImg}
                             formTitle="You want Likes?"   
                             placeholderValue="Likes"
-                            tabsToggleClass={this.state.toggleState === 2 ? "main-form__tab active-tab" : "main-form__tab"}                     
+                            tabsToggleClass={this.state.toggleState === 2 ? "main-form__tab active-tab" : "main-form__tab"} 
+                            imageClass="main-form__tab-img likes-img wow fadeInRight"                    
                         />
                         <OfferTabsItem 
                             tabsImg={OfferViewsImg}
                             formTitle="You want Views?"   
                             placeholderValue="Views"
-                            tabsToggleClass={this.state.toggleState === 3 ? "main-form__tab active-tab" : "main-form__tab"}                     
+                            tabsToggleClass={this.state.toggleState === 3 ? "main-form__tab active-tab" : "main-form__tab"}    
+                            imageClass="main-form__tab-img views-img wow fadeInRight"                 
                         />
                     </div>
                     </div>
