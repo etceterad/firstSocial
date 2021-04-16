@@ -64,7 +64,7 @@ export default class Footer extends React.Component {
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-6 text-right">
-                        <div className="footer-copyright iq-fw-5">Copyrights 2019 © <Link to="#" className="text-green iq-fw-5">TikTokFans</Link> </div>
+                        <div className="footer-copyright iq-fw-5">Copyrights 2138 © <Link to="#" className="text-green iq-fw-5">TikTokFans</Link> </div>
                     </div>
 
                     </div>

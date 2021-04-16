@@ -56,7 +56,7 @@ export default class Footer extends React.Component {
                     <div className="iq-footer-logo">
                       <a href="index.html"><img src={FooterLogo} className="img-fluid" alt="footer" /></a>
                     </div>
-                    <div className="footer-copyright mb-4 iq-fw-5 mt-3">©Copyrights 2019 TikTokFans</div>
+                    <div className="footer-copyright mb-4 iq-fw-5 mt-3">©Copyrights 2138 TikTokFans</div>
                     <div>
                       <div className="social-media d-inline-block float-left ml-4">
                         <ul className="social">

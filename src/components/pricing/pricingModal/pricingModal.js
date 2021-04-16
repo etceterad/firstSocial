@@ -8,7 +8,7 @@ export default class PricingModal extends React.Component{
         this.state = {
             login: "",
             email: "",
-            checkboxAgreement: false
+            checkboxAgreement: true
         }
 
         this.handleLoginInput = this.handleLoginInput.bind(this)
@@ -25,13 +25,14 @@ export default class PricingModal extends React.Component{
 
     handleEmailInput(e) {
         console.log(this.state.email)
-        e.target.value = e.target.checked
         this.setState({
             email: e.target.value
         })
     }
 
     handleCheckboxArgeementInput(e) {
+        console.log(this.state.checkboxAgreement)
+        e.target.value = e.target.checked
         this.setState({
             checkboxAgreement: e.target.value
         })
