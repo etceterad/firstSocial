@@ -1,17 +1,7 @@
 import React from 'react';
-import Accordeon from '../../accordion';
+import Accordeon from '../../accordeon';
 
 export default class FaqMainContent extends React.Component {
-    constructor() {
-        super()
-
-        this.state = {
-            activeTabId: 0,
-            activeTab: false
-        }
-    }
-
-    
 
     render() {
         return(

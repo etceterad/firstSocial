@@ -4,6 +4,7 @@ import Footer from '../../footer';
 import Offer from '../../offer';
 import FaqMainContent from '../faqMainContent';
 import Preloader from '../../preloader';
+import WOW from 'wowjs';
 
 export default class FaqPage extends React.Component {
     constructor(props){
@@ -13,6 +14,14 @@ export default class FaqPage extends React.Component {
             titleActive: "FAQ",
             activeId: 4
         }
+    }
+
+    componentDidMount() {
+        setTimeout(() =>{
+            new WOW.WOW({
+                live: false
+            }).init();
+        }, 500)
     }
 
     render() {

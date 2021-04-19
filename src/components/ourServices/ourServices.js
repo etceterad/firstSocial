@@ -2,6 +2,7 @@ import React from 'react';
 import OurServicesImg from './16.png';
 
 export default class OurServices extends React.Component {
+
     render() {
         return (
             <section className="iq-works position-relative pt-0 we-offer">
@@ -15,8 +16,8 @@ export default class OurServices extends React.Component {
                 </div>
               </div>
               <div className="row">
-                <div className="col-lg-6">
-                  <div className="services purple " >
+                <div className="col-lg-6 wow fadeInUp">
+                  <div className="services purple" >
                     <div className="services-info">
                       <div className="service-shap purple"><i className="ion-ios-cloud-download-outline"></i></div>
                       <h5 className="float-left mt-4">Data Analysis</h5>
@@ -26,7 +27,7 @@ export default class OurServices extends React.Component {
                     <a href="service.html" className="button-info">Read More <span className="float-right">. . .</span></a>
                   </div>
                 </div>
-                <div className="col-lg-6">
+                <div className="col-lg-6 wow fadeInUp">
                   <div className="services purple " >
                     <div className="services-info">
                       <div className="service-shap purple"><i className="ion-ios-bookmarks-outline"></i></div>
@@ -37,7 +38,7 @@ export default class OurServices extends React.Component {
                     <a href="service.html" className="button-info">Read More <span className="float-right">. . .</span></a>
                   </div>
                 </div>
-                <div className="col-lg-6">
+                <div className="col-lg-6 wow fadeInUp">
                   <div className="services purple mb-lg-0 " >
                     <div className="services-info">
                       <div className="service-shap purple"><i className="ion-ios-pie-outline"></i></div>
@@ -48,7 +49,7 @@ export default class OurServices extends React.Component {
                     <a href="service.html" className="button-info">Read More <span className="float-right">. . .</span></a>
                   </div>
                 </div>
-                <div className="col-lg-6">
+                <div className="col-lg-6 wow fadeInUp">
                   <div className="services purple mb-lg-0" >
                     <div className="services-info">
                       <div className="service-shap purple"><i className="ion-ios-world-outline"></i></div>
