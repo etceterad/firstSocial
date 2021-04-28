@@ -176,6 +176,34 @@ NOTE: This file contains the styling for responsive Template.
 		height: 30px;
 	}
 
+	.main-manage__form-left{
+		display: block;
+		width: 60%;
+	}
+
+	.main-manage__form-right{
+		width: 38%;
+	}
+
+	button.main-manage__btn{
+		position: absolute;
+		top: 200%;
+		z-index: 999;
+		width: 100%;
+	}
+
+	.main-reset__form-left {
+		width: 60%;
+	}
+
+	.main-reset__form-right{
+		width: 38%;
+	}
+	
+	.main-reset__btn{
+		width: 50%;
+	}
+
 	.main-blog .blog-detail .blog-info a span {
 		font-size: 16px;
 	}
@@ -269,7 +297,7 @@ NOTE: This file contains the styling for responsive Template.
 		header.header-four .mega-menu.desktopTopFixed .hamburger {
 		right: 60px;
 	}
-header.header-four  .container-fluid {
+	header.header-four  .container-fluid {
 		padding: 0 50px;
 	}
 	header.header-four  .container-fluid {
@@ -830,6 +858,19 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 
 	.feature-images {
 		display: none;
+	}
+
+	.user-img img {
+		width: 150px;
+		height: 150px;
+	}	
+
+	.main-activity__chart {
+		display: none;
+	}
+
+	.main-activity__table-container {
+		width: 100%;
 	}
 
 	.iq-pricing {
@@ -1415,6 +1456,20 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 		top: 54px;
 	}
 
+	.calculated-area__button button.form-button.search-btn {
+		width: 100%;
+	}
+
+	.main-form__calculated-area{
+		display: block;
+	}
+
+	button.main-manage__btn{
+		width: 50%;
+		position: absolute;
+		top: 200%;
+	}
+
 	.iq-breadcrumb .breadcrumb-two {
 		width: 50%;
 	}
@@ -1429,6 +1484,15 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 
 	.login-from .navbar-collapse {
 		width: 92%;
+	}
+
+	.main-manage__form-input {
+		padding-right: 0;
+		width: 75%;
+	}
+
+	.main-manage__form-block{
+		width: 100%;
 	}
 
 	.iq-slolution-details {
@@ -1530,6 +1594,69 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 
 	.purchase-popup{
 		width: 380px;
+	}
+
+	.main-manage__form-right{
+		display: none;
+	}
+
+	.main-reset__form-right{
+		display: none;
+	}
+
+	.main-manage__form-block{
+		width: 100%;
+		text-align: center;
+	}
+
+	.responsive-flex{
+		flex-direction: column;
+	}
+	
+	.main-search__user-info {
+		width: 100%;
+		padding-top: 35px;
+	}
+
+	.main-manage__form-block:last-child{
+		padding-bottom: 50px;
+	}
+
+	button.main-manage__btn{
+		top: 200%;
+		width: 50%;
+		left: 25%;
+		z-index: 999;
+	}
+
+	.main-manage__form-left {
+		width: 100%;
+	}
+
+	.main-reset__form-left {
+		width: 100%;
+		text-align: center;
+	}
+
+	.main-reset__btn{
+		width: 50%;
+	}
+
+	.main-manage__form-left:after {
+		width: 0;
+	}
+
+	.main-reset__form-left:after {
+		width: 0;
+	}
+
+	input.main-manage__form-input{
+		padding-right: 0;
+		width: 90%;
+	}
+
+	.title {
+		text-align: center;
 	}
 
 	.purchase-popup__form-input{
@@ -1916,6 +2043,10 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 		header.header-four .header-top-bar .social-bar {
 		display: none;
 	}
+
+	.user-img{
+		padding-top: 30px;
+	}
         
          	header.header-four .menu-list-items .container-fluid, header.header-four .container-fluid {
 		padding: 0 15px;
@@ -1931,6 +2062,15 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 
 	.our-success {
 		text-align: center;
+	}
+
+	input.main-manage__form-input{
+		padding-right: 0;
+		width: 95%;
+	}
+
+	.main-activity__table-container{
+		overflow-x: scroll;
 	}
 
 	.footer-link{

@@ -998,6 +998,320 @@ How work section
 	bottom: 0;
 }
 
+.main-activity{
+	width: 100%;
+	height: 400px;
+	background: #fff;
+	box-shadow: 0px 8px 22px 5px rgb(0 0 0 / 10%);
+	padding: 15px;
+}
+
+.main-activity__table-container::-webkit-scrollbar { /* webkit */
+    width: 0;
+    height: 0;
+}
+
+.main-activity__title{
+	padding: 15px 0 0 20px
+}
+
+.main-activity__container {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	height: auto;
+	position: relative;
+}
+
+.main-activity__table-container{
+	width: 70%;
+	overflow: scroll;
+	overflow-x: hidden;
+	height: 300px;
+}
+
+.main-activity__table{
+	width: 100%;
+	height: 200px;
+	margin-left: 15px;
+	text-align: center;
+	border-collapse: separate;
+	overflow: scroll;
+}
+
+.main-activity__table th, td {
+	border-right: 1px solid #e2e2e2;
+	border-bottom: 1px solid #e2e2e2;
+	padding: 15px 0px;
+}
+
+.main-activity__table-cell.status-done{
+	color: #33e2a0;
+}
+
+.main-activity__table-cell.status-failed{
+	color: red;
+}
+
+.main-activity__table-cell.status-in-process{
+	color: #7c60d5;
+}
+
+.main-activity__table-cell{
+	position: relative;
+}
+
+.main-activity__table-name {
+	width: 25%;
+}
+
+.main-activity__table-row {
+	margin-bottom: 15px;
+}
+
+.main-activity__chart{
+	width: 45%;
+	text-align: center;
+	vertical-align: middle;
+	position: absolute;
+	left: 63%;
+}
+
+.main-activity__chart canvas {
+	width: 100%!important;
+	height: 100%!important;
+}
+
+.main-manage{
+	width: 100%;
+}
+
+.main-manage__form{
+	width: 100%;
+}
+
+.main-manage__form-container{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.main-manage__form-left{
+	width: 70%;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+
+.main-manage__form-left:after {
+	content: "";
+	height: 100%;
+	width: 1px;
+	background: #e2e2e2;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 100%;
+}
+
+.main-manage__form-block{
+	width: 50%;
+	position: relative;
+}
+
+.main-manage__form-right{
+	width:28%;
+}
+
+.main-manage__form-reset{
+	margin-top: 40px;
+}
+
+.main-manage__btn{
+	width: 50%;
+	height: 45px;
+	transition: all 0.4s ease;
+}
+.main-reset__btn{
+	width: 25%;
+	height: 45px;
+	transition: all 0.4s ease;
+}
+
+.main-reset__form-left{
+	width: 70%;
+	position: relative;
+}
+
+.main-reset__form-left:after {
+	content: "";
+	height: 100%;
+	width: 1px;
+	background: #e2e2e2;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 100%
+}
+
+.main-reset__form-right{
+	width: 28%;
+}
+
+.main-manage__form-text{
+	width: 100%;
+	padding: 15px;
+	color: #000;
+	font-size: 14px;
+	font-weight: 500;
+	background: rgba(51, 226, 160, 0.4);
+	border-radius: 15px;
+
+}
+
+.main-manage__form-input{
+	display: inline-block;
+}
+
+.main-manage__form-label{
+	padding-left: 15px;
+}
+
+.select-time__list-item{
+	text-align: center;
+	padding: 10px 25px;
+	border: 1px solid #33e2a0;
+	border-radius: 10px;
+	box-shadow: 1px 6px 15px -5px rgba(51,226,160,0.7);
+	transition: all 0.6s ease;
+	cursor: pointer;
+}
+
+.select-time__list-item:hover {
+	border: 1px solid #7c60d5;	
+	box-shadow: 1px 6px 15px -1px rgba(124,96,213,0.7);
+}
+
+.select-time__list-item:hover a.list-item__link {
+	color: #7c60d5;
+}
+
+.select-time__list-item.active-time {
+	border: 1px solid #7c60d5;	
+	box-shadow: 1px 6px 15px -1px rgba(124,96,213,0.7);
+}
+
+.select-time__list-item.active-time a.list-item__link {
+	color: #7c60d5;
+}
+
+.select-time__list{
+	margin-bottom: 30px;
+}
+
+.home-search__link{
+	z-index: 999;
+	padding-left: 300px;
+}
+
+.main-from__calculate-container{
+	display: flex;
+	justify-content: space-between;
+}
+
+.user-img img{
+	border-radius: 50%;
+	border: 1px solid transparent;
+	vertical-align: middle;
+}
+
+.user-img{
+	padding-top: 15px;
+	width: 50%;
+	text-align: right;
+}
+
+.main-search__user-info{
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+	padding-top: 0;
+}
+
+.main-search__user-info.main-modal {
+	width: 80%;
+	padding-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	align-items: center;
+	padding-bottom: 25px;
+}
+.spinner{
+	text-align: center;
+	vertical-align: middle;
+}
+
+.modal-grid__container{
+	padding-bottom: 30px;
+}
+
+.posts-img{
+	border-radius: 10px!important;
+	width: 100%;
+	border: 1px solid transparent;
+}
+
+.posts-img.selected {
+	box-shadow: 0px 2px 20px 0px rgba(124, 96, 213, 0.7);
+	border-color: #7c60d5;
+	transition: all 0.4s ease;
+}
+
+.purchase-popup__title.main-modal {
+	padding-bottom: 0px;
+	margin-bottom: 0;
+}
+
+.main-search__user-info.main-modal .user-img{
+	text-align: center;
+}
+
+.main-search__user-info.main-modal .user-img img{ 
+	width: 50%;	
+	height: 50%;
+}
+
+.user-info{
+	width: 50%;
+	padding-top: 25px;
+}
+
+.main-search__user-info.main-modal .user-info{
+	padding-top: 15px;
+}
+
+.user-info__list{
+	text-align: center;
+	font-size: 18px;
+}
+
+.main-search__user-info.main-modal .user-info__list {
+	font-size: 16px;
+}
+
+ul.user-info__list li.user-info__list-item:first-child{
+	font-weight: 700;
+	color: #000;
+}
+
+.main-search__user-info.main-modal .user-info__list li.user-info__list-item {
+	line-height: 1.5;
+}
+
+section.iq-work.activity-section{
+	margin-top: 0;
+}
+
 .iq-workinfo .service-shap {
 	border: 10px solid #7c60d5;
 	background: #ffffff;

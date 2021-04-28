@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import '../../css/style.css';
 import logo from './logoExmpl.png';
-import HeaderHamburger from '../../images/tiktokfans-hamburger.png';
-import HeaderHamburgerClose from '../../images/tiktokfans-close.png';
 
 
 export default class HeaderNav extends React.Component {
@@ -88,10 +86,10 @@ export default class HeaderNav extends React.Component {
                                 </ul>
                                 <ul className="menu-sidebar">
                                 <li>
-                                    <a className="slide-button button" href="login.html">
+                                    <Link className="slide-button button" to="/login">
                                         <div className="first">Login</div>
                                         <div className="second">Login</div>
-                                    </a>
+                                    </Link>
                                 </li>
                                 </ul>
                             </div>

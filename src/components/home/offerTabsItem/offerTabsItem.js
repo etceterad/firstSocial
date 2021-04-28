@@ -1,11 +1,14 @@
 import React from 'react';
+import TikTokApi from '../../../services';
 
 export default class OfferTabsItem extends React.Component {
+    tikTokApi = new TikTokApi();
+
     constructor(props) {
         super(props)
 
         this.state = {
-            firstName: "",
+            firstName: {},
             desiredNumber: ""
         }
 
@@ -28,7 +31,7 @@ export default class OfferTabsItem extends React.Component {
     }
 
     render() {
-        const {tabsImg, formTitle, placeholderValue, tabsToggleClass, imageClass} = this.props;
+        const {tabsImg, formTitle, placeholderValue, tabsToggleClass, imageClass, activateModal, runPost} = this.props;
 
         return(
             <div className={tabsToggleClass}>
@@ -36,12 +39,12 @@ export default class OfferTabsItem extends React.Component {
                     <h3 className="main-form__calculate-title">
                         {formTitle}
                     </h3>
-                    <form action="">
+                    <form >
                         <input type="text" className="main-form__input" onChange={this.handleInputLoginChange} placeholder="Your TIK-TOK Login" />
                         <input type="text" className="main-form__input" onChange={this.handleInputDesiredNumberChange} placeholder={"Number of desired " + placeholderValue} /><br/>
                         <div className="main-form__calculated-area">
-                            <div className="calculated-area__button">
-                                <button type="submit" className="button form-button">BUY</button>
+                            <div className="calculated-area__button" onClick={(e) => runPost(e, this.state.firstName)}>
+                                <button type="submit" onClick={activateModal} className="button form-button">BUY</button>
                             </div>   
                             <div className="calculated-area__price">
                                 <label htmlFor="calculated-price">Price:</label>

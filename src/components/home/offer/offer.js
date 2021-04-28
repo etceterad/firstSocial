@@ -1,17 +1,28 @@
 import React from 'react';
 import OfferTabsItem from '../offerTabsItem';
 import Background13 from './images/13.png';
+import TikTokApi from '../../../services'
+import OfferModal from '../offerModal';
 import OfferSubscribersImg from './images/5.png';
 import OfferLikesImg from './images/06.png';
 import OfferViewsImg from './images/08.png';
+import {Link} from 'react-router-dom';
 
 export default class Offer extends React.Component {
+    tikTokApi = new TikTokApi()
+
     constructor(props) {
         super(props)
 
          this.state = {
-            toggleState: 1
+            toggleState: 1,
+            modalActive: false,
+            user: {},
+            onLoad: true,
+            onError: false
          }
+
+         this.resetActive = this.resetActive.bind(this)
     }
 
     toggleTabs(index, e) {
@@ -21,8 +32,45 @@ export default class Offer extends React.Component {
         e.preventDefault();
     }
 
+    activateModal(e) {
+        this.setState({
+            modalActive: true 
+        })
+        e.preventDefault();
+    }
+
+    resetActive() {
+        this.setState({
+            modalActive: false,
+            onLoad: true,
+            onError: false
+        })
+    }
+
+    errorCatcher = async () => {
+         this.setState({
+            onError: true,
+        })
+    }
+
+    onUserLoaded = async (user) => {
+        this.setState({
+            user: user,
+            onLoad: false,
+            onError: false
+        })
+        await console.log(this.state.user)
+    }
+
+    loadProfile = async (e, username) => {
+        this.tikTokApi.getUser(e, username)
+            .then(this.onUserLoaded)
+            .catch(this.errorCatcher)
+    }   
+
     render() {
-        
+        const {user, posts} = this.state.user;
+
         return (
             <div className="main-form">
                 <div className="left-img"><img src={Background13} className="img-fluid" alt="offer" /></div>
@@ -53,23 +101,35 @@ export default class Offer extends React.Component {
                             formTitle="You want Subscribers?"   
                             placeholderValue="Subscribers"
                             tabsToggleClass={this.state.toggleState === 1 ? "main-form__tab active-tab" : "main-form__tab"}  
-                            imageClass="main-form__tab-img wow fadeInRight"                   
+                            imageClass="main-form__tab-img wow fadeInRight"
+                            activateModal={(e) => this.activateModal(e)}   
+                            runPost={(e, state) => this.loadProfile(e, state)}
                         />
                         <OfferTabsItem 
                             tabsImg={OfferLikesImg}
                             formTitle="You want Likes?"   
                             placeholderValue="Likes"
                             tabsToggleClass={this.state.toggleState === 2 ? "main-form__tab active-tab" : "main-form__tab"} 
-                            imageClass="main-form__tab-img likes-img wow fadeInRight"                    
+                            imageClass="main-form__tab-img likes-img wow fadeInRight"
+                            activateModal={(e) => this.activateModal(e)}                    
                         />
                         <OfferTabsItem 
                             tabsImg={OfferViewsImg}
                             formTitle="You want Views?"   
                             placeholderValue="Views"
                             tabsToggleClass={this.state.toggleState === 3 ? "main-form__tab active-tab" : "main-form__tab"}    
-                            imageClass="main-form__tab-img views-img wow fadeInRight"                 
+                            imageClass="main-form__tab-img views-img wow fadeInRight"      
+                            activateModal={(e) => this.activateModal(e)}           
                         />
                     </div>
+                    <OfferModal
+                        resetActive={this.resetActive}
+                        active={this.state.modalActive} 
+                        onLoad={this.state.onLoad}
+                        userInfo={user}
+                        posts={posts}
+                        errorHandler={this.state.onError}
+                    />
                     </div>
                 </section>
             </div>

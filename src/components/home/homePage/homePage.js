@@ -19,6 +19,7 @@ export default class HomePage extends React.Component {
                 live: false
             }).init();
         }, 500)
+
     }
 
     render() {
