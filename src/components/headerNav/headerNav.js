@@ -27,7 +27,7 @@ export default class HeaderNav extends React.Component {
     }
 
     handleScroll = () =>{
-        if (window.pageYOffset > 15) {
+        if (window.pageYOffset > 10) {
             if(!this.state.nav){
               this.setState({ nav: true });
             }

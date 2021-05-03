@@ -840,6 +840,20 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 		display: none;
 	}
 
+	.main-form__tab-img{
+		display: none;
+	}
+
+	.main-form__tab-calculate{
+		width: 90%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.calculated-area__price {
+		padding-top: 15px;
+	}
+
 	.iq-solutions {
 		padding-bottom: 80px;
 	}
@@ -1837,9 +1851,7 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 		margin-bottom: 20px;
 	}
 
-	.main-form__tab-img{
-		display: none;
-	}
+	
 
 	.main-form__tab-calculate{
 		width: 90%;
@@ -2067,6 +2079,14 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 	input.main-manage__form-input{
 		padding-right: 0;
 		width: 95%;
+	}
+
+	.my-masonry-grid{
+		margin-left: 0px;
+	}
+
+	.my-masonry-grid_column{
+		padding-left: 0px;
 	}
 
 	.main-activity__table-container{
@@ -2659,5 +2679,17 @@ header.header-four .mega-menu .menu-links {padding-left: 0px;}
 	}
 	.overview-block-pb5 {
 		padding-bottom: 0px;
+	}
+
+	footer .form-group .footer-form{
+		padding-left: 15px;
+	}
+
+	.first.footer-btn{
+		padding: 0 20px;
+	}
+
+	.second.footer-btn{
+		padding: 0 20px;
 	}
 }

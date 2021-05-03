@@ -3,6 +3,7 @@ import OurSuccess from '../ourSuccess';
 import OurAchievments from '../ourAchievments';
 import OurServices from '../../ourServices';
 import DoneProjects from '../doneProjects';
+import DoneProjectsSlider from '../doneProjectsSlider';
 // import DoneProjects from '../doneProjects';
 import WOW from 'wowjs';
 import OurTestimonials from '../ourTestimonials';

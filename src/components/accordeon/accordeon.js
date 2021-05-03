@@ -12,10 +12,10 @@ export default class Accordeon extends React.Component {
     }
 
     setActiveTabId(id){
-        this.setState(prevState => ({
+        this.setState({
             activeTabId: id,
-            activeTab: !prevState.activeTab
-        }))
+            activeTab: true
+        })
     }
 
     render() {

@@ -1,6 +1,7 @@
 import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import TestimonialsImg from './01.jpg';
+import OurTestimonialsItem from './ourTestimonialsItem';
 
 export default class OurTestimonials extends React.Component {
     render(){
@@ -18,47 +19,48 @@ export default class OurTestimonials extends React.Component {
                </div>
                <div className="row" >
                   <div className="col-sm-12">
-                     <OwlCarousel className="owl-carousel" navText={['<i class="ion-arrow-left-c"></i>', '<i class="ion-arrow-right-c"></i>']} autoplay={false} loop={true} nav={true} dots={false} items="2" data-items-laptop="2" data-items-tab="2" data-items-mobile="1" data-items-mobile-sm="1">
-                        <div className="item">
-                           <div className="testimonial-box white">
-                              <img src={TestimonialsImg} className="img-fluid mb-3 img-shap" alt="" />
-                              <p className="testimonial-info"> Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat. </p>
-                              <h6 className="mb-3">Nik Jorden</h6>
-                              <span><strong className="text-black">CEO -</strong><span className="iq-fw-4 ml-0"> TikTokFans</span></span>
-                           </div>
-                        </div>
-                        <div className="item">
-                           <div className="testimonial-box white">
-                              <img src={TestimonialsImg} className="img-fluid mb-3 img-shap" alt="" /> 
-                              <p className="testimonial-info"> Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat. </p>
-                              <h6 className="mb-3">Kips Leo</h6>
-                              <span><strong className="text-black">CEO -</strong><span className="iq-fw-4 ml-0"> TikTokFans</span></span>
-                           </div>
-                        </div>
-                        <div className="item">
-                           <div className="testimonial-box white">
-                              <img src={TestimonialsImg} className="img-fluid mb-3 img-shap" alt="" />
-                              <p className="testimonial-info"> Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat. </p>
-                              <h6 className="mb-3">Glen Jax </h6>
-                              <span><strong className="text-black">CEO -</strong><span className="iq-fw-4 ml-0"> TikTokFans</span></span>
-                           </div>
-                        </div>
-                        <div className="item">
-                           <div className="testimonial-box white">
-                              <img src={TestimonialsImg} className="img-fluid mb-3 img-shap" alt="" />
-                              <p className="testimonial-info"> Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat. </p>
-                              <h6 className="mb-3">Larry Page</h6>
-                              <span><strong className="text-black">CEO -</strong><span className="iq-fw-4 ml-0"> TikTokFans</span></span>
-                           </div>
-                        </div>
-                        <div className="item">
-                           <div className="testimonial-box white">
-                              <img src={TestimonialsImg} className="img-fluid mb-3 img-shap" alt="" />
-                              <p className="testimonial-info"> Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat. </p>
-                              <h6 className="mb-3">JD Scot</h6>
-                              <span><strong className="text-black">CEO -</strong><span className="iq-fw-4 ml-0"> TikTokFans</span></span>
-                           </div>
-                        </div>
+                     <OwlCarousel 
+                        className="owl-carousel" 
+                        navText={['<i class="ion-arrow-left-c"></i>', '<i class="ion-arrow-right-c"></i>']} 
+                        autoplay={false} 
+                        loop={true} 
+                        nav={true} 
+                        dots={false} 
+                        items="2"
+                        responsive={{
+                           0:{
+                              items:1
+                           },
+                           600:{
+                              items:2
+                           }
+                        }} 
+                     >
+                        <OurTestimonialsItem 
+                           testimonialsAuthor={"Nik Jorden"} 
+                           testimonialsText={"Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat."}
+                           testimonialsImg={TestimonialsImg}
+                        />
+                        <OurTestimonialsItem 
+                           testimonialsAuthor={"Kips Leo"} 
+                           testimonialsText={"Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat."}
+                           testimonialsImg={TestimonialsImg}
+                        />
+                        <OurTestimonialsItem 
+                           testimonialsAuthor={"Glen Jax"} 
+                           testimonialsText={"Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat."}
+                           testimonialsImg={TestimonialsImg}
+                        />
+                        <OurTestimonialsItem 
+                           testimonialsAuthor={"Larry Page"} 
+                           testimonialsText={"Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat."}
+                           testimonialsImg={TestimonialsImg}
+                        />
+                        <OurTestimonialsItem 
+                           testimonialsAuthor={"JD Scot"} 
+                           testimonialsText={"Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat."}
+                           testimonialsImg={TestimonialsImg}
+                        />
                      </OwlCarousel>
                   </div>
                </div>

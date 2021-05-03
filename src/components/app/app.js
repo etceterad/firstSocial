@@ -17,7 +17,7 @@ import PasswordResetPage from '../passwordReset/passwordResetPage';
 import SearchProfilePage from '../searchProfile/searchProfilePage';
 import AccountPage from '../account/accountPage';
 import ScrollToTop from '../scrollToTop';
-
+// css files
 import '../../css/style.css';
 import '../../css/all.min.css';
 import '../../css/bootstrap.min.css';
@@ -31,8 +31,6 @@ import '../../css/timeline.css';
 import '../../css/typography.css';
 import '../../css/wow.css';
 
-
-
 export default class App extends React.Component {
 
     render() {
@@ -41,7 +39,7 @@ export default class App extends React.Component {
                 <ScrollToTop>
                     <Switch location={this.props.location}>
                     <Route path="/" exact>
-                    <HomePage />
+                        <HomePage />
                     </Route>
                     <Route path="/about-us"><AboutUsPage /></Route>
                     <Route path="/portfolio"><PortfolioPage /></Route>

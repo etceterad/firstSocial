@@ -1,12 +1,18 @@
 import React from 'react';
-import UserAvatar from '../../../images/avatar.png';
+import TikTokApi from '../../../services';
+import Spinner from '../../spinner';
 
 export default class SearchProfileMain extends React.Component {
+    tikTokApi = new TikTokApi();
+
     constructor(props) {
         super(props)
 
         this.state = {
-            login: ""
+            login: "",
+            onLoad: true,
+            user: {},
+            onError: false
         }
 
         this.handleInputLoginChange = this.handleInputLoginChange.bind(this)
@@ -19,7 +25,32 @@ export default class SearchProfileMain extends React.Component {
         console.log(this.state.login)
     }
 
+    loadProfile = async (e, username) => {
+        this.tikTokApi.getUserInfo(e, username)
+            .then(this.onUserLoaded)
+            .catch(this.errorCatcher);
+    }
+
+    errorCatcher = async () => {
+        this.setState({
+           onError: true,
+       })
+   }
+
+   onUserLoaded = async (user) => {
+       this.setState({
+           user: user,
+           onLoad: false,
+           onError: false
+       })
+       await console.log(this.state.user)
+   }
+
     render() {
+        const { user } = this.state.user;
+
+        const ProfileData = this.state.onLoad ? <Spinner /> : <UserProfile user={user}  />;
+
         return(
             <section className="iq-works position-relative pb-0 ">
                 <div className="container">
@@ -39,28 +70,44 @@ export default class SearchProfileMain extends React.Component {
                                 <input type="text" className="main-form__input" onChange={this.handleInputLoginChange} placeholder="Username" />
                                 <div className="main-form__calculated-area">
                                     <div className="calculated-area__button">
-                                        <button type="submit" className="button form-button search-btn">SEARCH</button>
+                                        <button type="button" onClick={(e) => this.loadProfile(e, this.state.login)} className="button form-button search-btn">SEARCH</button>
                                     </div>   
                                 </div>
                             </form>
                         </div>
-                        <div className="main-search__user-info">
-                            <div className="user-img">
-                                <img src={UserAvatar} alt=""/>
-                            </div>
-                            <div className="user-info">
-                                <ul className="user-info__list">
-                                    <li className="user-info__list-item">@login</li>
-                                    <li className="user-info__list-item">Name</li>
-                                    <li className="user-info__list-item">1 followers</li>
-                                    <li className="user-info__list-item">1 following</li>
-                                    <li className="user-info__list-item">1 likes</li>
-                                </ul>
-                            </div>
-                        </div>
+                        {ProfileData}
                     </div>
                 </div>
             </section>        
         )
     }
+}
+
+class UserProfile extends React.Component {
+    
+    render() {
+
+        const { user } = this.props;
+        const {avatar, login_name, name, followers, following, likes} = user;
+
+        return(
+            <>
+                <div className="main-search__user-info">
+                    <div className="user-img">
+                        <img src={avatar} alt=""  / >
+                    </div>
+                    <div className="user-info">
+                        <ul className="user-info__list">
+                            <li className="user-info__list-item">@{login_name}</li>
+                            <li className="user-info__list-item">{name}</li>
+                            <li className="user-info__list-item">{followers} followers</li>
+                            <li className="user-info__list-item">{following} following</li>
+                            <li className="user-info__list-item">{likes} likes</li>
+                        </ul>
+                    </div>
+                </div>
+            </>
+        )
+    }
+    
 }

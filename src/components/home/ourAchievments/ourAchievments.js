@@ -41,7 +41,7 @@ export default class OurAchievments extends React.Component {
                                        </VisibilitySensor>
                                     )}
                                  </CountUp>
-                                 <p>Happy Clients.</p>
+                                 <p style={{marginBottom: "0"}}>Happy Clients.</p>
                               </div>
                            </div>
                         </div>

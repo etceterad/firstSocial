@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import OurServicesImg from './16.png';
 
 export default class OurServices extends React.Component {
@@ -24,7 +25,7 @@ export default class OurServices extends React.Component {
                       <div className="clearfix"></div>
                       <p className="mt-3 mb-0">Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.</p>
                     </div>
-                    <a href="service.html" className="button-info">Read More <span className="float-right">. . .</span></a>
+                    <Link to="/service" className="button-info">Read More <span className="float-right">. . .</span></Link>
                   </div>
                 </div>
                 <div className="col-lg-6 wow fadeInUp">
@@ -35,7 +36,7 @@ export default class OurServices extends React.Component {
                       <div className="clearfix"></div>
                       <p className="mt-3 mb-0">Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.</p>
                     </div>
-                    <a href="service.html" className="button-info">Read More <span className="float-right">. . .</span></a>
+                    <Link to="/service" className="button-info">Read More <span className="float-right">. . .</span></Link>
                   </div>
                 </div>
                 <div className="col-lg-6 wow fadeInUp">
@@ -46,7 +47,7 @@ export default class OurServices extends React.Component {
                       <div className="clearfix"></div>
                       <p className="mt-3 mb-0">Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.</p>
                     </div>
-                    <a href="service.html" className="button-info">Read More <span className="float-right">. . .</span></a>
+                    <Link to="/service" className="button-info">Read More <span className="float-right">. . .</span></Link>
                   </div>
                 </div>
                 <div className="col-lg-6 wow fadeInUp">
@@ -57,7 +58,7 @@ export default class OurServices extends React.Component {
                       <div className="clearfix"></div>
                       <p className="mt-3 mb-0">Progravida nibh vel velit auctor alinean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.</p>
                     </div>
-                    <a href="service.html" className="button-info">Read More <span className="float-right">. . .</span></a>
+                    <Link to="/service" className="button-info">Read More <span className="float-right">. . .</span></Link>
                   </div>
                 </div>
               </div>

@@ -38,11 +38,11 @@ export default class Footer extends React.Component {
                   <div className="col-lg-6 col-md-12">
                   <form className="position-relative subscribe-form mt-5 mt-lg-0">
                       <div className="form-group mb-0">
-                        <input type="email" className="form-control position-relative subscription-email mb-0" onChange={this.handleEmailInput} placeholder="Enter Email" />
+                        <input type="email" className="form-control footer-form position-relative subscription-email mb-0" onChange={this.handleEmailInput} placeholder="Enter Email" />
                       </div>
                     <a className="slide-button button bt-subscribe subscription-button " href=" ">
-                      <div className="first">Subscribe</div>
-                      <div className="second">Subscribe</div>
+                      <div className="first footer-btn">Subscribe</div>
+                      <div className="second footer-btn">Subscribe</div>
                     </a>
                     </form>
                   </div>

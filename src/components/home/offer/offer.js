@@ -6,7 +6,6 @@ import OfferModal from '../offerModal';
 import OfferSubscribersImg from './images/5.png';
 import OfferLikesImg from './images/06.png';
 import OfferViewsImg from './images/08.png';
-import {Link} from 'react-router-dom';
 
 export default class Offer extends React.Component {
     tikTokApi = new TikTokApi()
@@ -63,10 +62,16 @@ export default class Offer extends React.Component {
     }
 
     loadProfile = async (e, username) => {
-        this.tikTokApi.getUser(e, username)
+        this.tikTokApi.getUserPosts(e, username)
             .then(this.onUserLoaded)
             .catch(this.errorCatcher)
-    }   
+    }
+    
+    loadProfileInfo = async (e, username) => {
+        this.tikTokApi.getUserInfo(e, username)
+            .then(this.onUserLoaded)
+            .catch(this.errorCatcher)
+    }  
 
     render() {
         const {user, posts} = this.state.user;
@@ -103,7 +108,7 @@ export default class Offer extends React.Component {
                             tabsToggleClass={this.state.toggleState === 1 ? "main-form__tab active-tab" : "main-form__tab"}  
                             imageClass="main-form__tab-img wow fadeInRight"
                             activateModal={(e) => this.activateModal(e)}   
-                            runPost={(e, state) => this.loadProfile(e, state)}
+                            runPost={(e, state) => this.loadProfileInfo(e, state)}
                         />
                         <OfferTabsItem 
                             tabsImg={OfferLikesImg}
@@ -111,7 +116,8 @@ export default class Offer extends React.Component {
                             placeholderValue="Likes"
                             tabsToggleClass={this.state.toggleState === 2 ? "main-form__tab active-tab" : "main-form__tab"} 
                             imageClass="main-form__tab-img likes-img wow fadeInRight"
-                            activateModal={(e) => this.activateModal(e)}                    
+                            activateModal={(e) => this.activateModal(e)}
+                            runPost={(e, state) => this.loadProfile(e, state)}                    
                         />
                         <OfferTabsItem 
                             tabsImg={OfferViewsImg}
@@ -119,7 +125,8 @@ export default class Offer extends React.Component {
                             placeholderValue="Views"
                             tabsToggleClass={this.state.toggleState === 3 ? "main-form__tab active-tab" : "main-form__tab"}    
                             imageClass="main-form__tab-img views-img wow fadeInRight"      
-                            activateModal={(e) => this.activateModal(e)}           
+                            activateModal={(e) => this.activateModal(e)}
+                            runPost={(e, state) => this.loadProfile(e, state)}           
                         />
                     </div>
                     <OfferModal
@@ -129,6 +136,8 @@ export default class Offer extends React.Component {
                         userInfo={user}
                         posts={posts}
                         errorHandler={this.state.onError}
+                        activeTabId={this.state.toggleState}
+                        userInput={this.state.user}
                     />
                     </div>
                 </section>

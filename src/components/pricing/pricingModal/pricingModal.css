@@ -18,3 +18,7 @@
     opacity: 1;
     pointer-events: all!important;
 }
+
+.purchase-popup {
+    height: auto;
+}

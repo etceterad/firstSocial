@@ -78,7 +78,24 @@ header .main-header {
 	padding: 0;
 }
 
+.my-masonry-grid {
+	display: -webkit-box; /* Not needed if autoprefixing */
+	display: -ms-flexbox; /* Not needed if autoprefixing */
+	display: flex;
+	margin-left: -10px; /* gutter size offset */
+	width: auto;
+  }
+  
+.my-masonry-grid_column {
+	padding-left: 15px; /* gutter size */
+	background-clip: padding-box;
+}
 
+
+
+.iq-masonry-item{
+	padding-bottom: 15px;
+}
 
 /*----------------
 Megamenu 
@@ -203,6 +220,14 @@ header.header-one.sticked .mega-menu .menu-contact {
 }
 
 header .mega-menu .menu-links > li:hover, .mega-menu .menu-logo > li > a:hover {
+	background: none;
+}
+
+header .mega-menu .menu-logo li a {
+	transition: none;
+}
+
+header .mega-menu .menu-logo li a:hover {
 	background: none;
 }
 
@@ -1259,6 +1284,7 @@ How work section
 	border-radius: 10px!important;
 	width: 100%;
 	border: 1px solid transparent;
+	cursor: pointer;
 }
 
 .posts-img.selected {
@@ -3843,7 +3869,7 @@ portfolio
 	width: 20%;
 }
 
-/* Masonry */
+Masonry */
 .iq-masonry.iq-columns-2 .iq-masonry-item {
 	width: 50%;
 	padding: 0 15px 15px 0;
@@ -3864,8 +3890,9 @@ portfolio
 	padding: 0 15px 15px 0;
 }
 
-/* Grid Full Screen */
-.isotope.full-grid, .iq-masonry.full-grid {
+
+
+ .isotope.full-grid, .iq-masonry.full-grid {
 	margin: 0 -15px 0 0;
 }
 
@@ -5758,6 +5785,24 @@ How work section
 
 .purchase-popup__form-label{
 	padding-left: 15px;
+}
+
+.error-container {
+	width: 100%;
+	height: auto;
+	padding: 25px 15px;
+	background: rgba(190, 70, 70, 0.25);
+	border: 1px solid rgb(190, 70, 70);
+	color: rgb(190, 70, 70);
+	text-align: center;
+	border-radius: 5px;
+	margin-bottom: 15px;
+}
+
+.error-text{
+	font-weight: 500;
+	margin: 0;
+	line-height: 1.3;
 }
 
 .hidden{ 

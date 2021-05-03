@@ -39,14 +39,14 @@ export default class OfferModal extends React.Component{
     }
 
     render() {
-        const {resetActive, active, userInfo, posts} = this.props;
+        const {resetActive, active, userInfo, posts, activeTabId} = this.props;
 
-        const ProfileData = this.props.onLoad ? <Spinner /> : <UserProfile user={userInfo} posts={posts} onSelectedId={(aweme_id) => this.onSelectId(aweme_id)}/>;
+        const ProfileData = this.props.onLoad ? <Spinner /> : <UserProfile user={userInfo} posts={posts} onSelectedId={(aweme_id) => this.onSelectId(aweme_id)} activeTabId={activeTabId} />;
         const ErrorShow = this.props.errorHandler ? <ErrorMessage /> : null;
 
         return(
             <div className={active ? "modal active" : "modal"} onClick={resetActive} >
-                <div className="purchase-popup" onClick={e => e.stopPropagation()}>
+                <div className="purchase-popup offer" onClick={e => e.stopPropagation()}>
                     <h2 className="purchase-popup__title main-modal">
                         Select the post
                     </h2> 
@@ -71,7 +71,7 @@ export default class OfferModal extends React.Component{
                                 <OfferModalTime
                                     itemClass={this.state.listItemId === 3 ? "select-time__list-item active-time" : "select-time__list-item"}
                                     itemHandler={() => this.setListItemId(3)}
-                                    timeText={'1 hour'} 
+                                    timeText={'1 hour'}
                                 />
                                 <OfferModalTime
                                     itemClass={this.state.listItemId === 4 ? "select-time__list-item active-time" : "select-time__list-item"}
@@ -110,11 +110,15 @@ export default class OfferModal extends React.Component{
     }       
 }
 
-const ErrorMessage = () => {
+
+const ErrorMessage = (props) => {
     return(
-        <h4 style={{color: "red", textAlign:"center"}}>Oops, something goes wrong...<br />Check Your login!</h4>
+        <div className="error-container">
+            <p className="error-text">Seems like this TikTok account haven't any posts yet...</p>
+        </div>
     )
 }
+
 
 class UserProfile extends React.Component {
     constructor(props) {
@@ -140,9 +144,8 @@ class UserProfile extends React.Component {
         const {avatar, login_name, name, followers, following, likes} = user;
 
         const renderVideos = () => {
-            if(posts === null){
+            if(posts === null || this.props.activeTabId === 1){
                 <div className="no-posts" style={{width: 0, height: 0}}></div>
-                
             } else {
                 return posts.map(item => {
                     const {aweme_id, cover} = item;
@@ -169,7 +172,7 @@ class UserProfile extends React.Component {
                     </div>
                     <div className="user-info">
                         <ul className="user-info__list">
-                            <li className="user-info__list-item">@{login_name}</li>
+                            <li className="user-info__list-item">@{login_name === "" ? name : login_name}</li>
                             <li className="user-info__list-item">{name}</li>
                             <li className="user-info__list-item">{followers} followers</li>
                             <li className="user-info__list-item">{following} following</li>
