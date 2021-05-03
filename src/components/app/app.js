@@ -35,24 +35,24 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <Router>
-                <ScrollToTop>
-                    <Switch location={this.props.location}>
-                    <Route path="/" exact>
-                        <HomePage />
-                    </Route>
-                    <Route path="/about-us"><AboutUsPage /></Route>
-                    <Route path="/portfolio"><PortfolioPage /></Route>
-                    <Route path="/faq"><FaqPage /></Route>
-                    <Route path="/pricing"><PricingPage /></Route>
-                    <Route path="/contact-us"><ContactUsPage /></Route>
-                    <Route path="/service"><ServicesPage /></Route>
-                    <Route path="/login"><LoginPage/></Route>
-                    <Route path="/register"><RegisterPage /></Route>
-                    <Route path="/password-reset"><PasswordResetPage /></Route>
-                    <Route path="/account-settings"><AccountPage /></Route>
-                    <Route path="/search-profile"><SearchProfilePage /></Route>
-                    </Switch> 
+                <Router>
+                    <ScrollToTop>
+                        <Switch location={this.props.location}>
+                                <Route path="/" exact>
+                                        <HomePage />
+                                </Route>
+                                <Route path="/about-us"><AboutUsPage /></Route>
+                                <Route path="/portfolio"><PortfolioPage /></Route>
+                                <Route path="/faq"><FaqPage /></Route>
+                                <Route path="/pricing"><PricingPage /></Route>
+                                <Route path="/contact-us"><ContactUsPage /></Route>
+                                <Route path="/service"><ServicesPage /></Route>
+                                <Route path="/login"><LoginPage/></Route>
+                                <Route path="/register"><RegisterPage /></Route>
+                                <Route path="/password-reset"><PasswordResetPage /></Route>
+                                <Route path="/account-settings"><AccountPage /></Route>
+                                <Route path="/search-profile"><SearchProfilePage /></Route>
+                    </Switch>
                 </ScrollToTop>
             </Router>
         )

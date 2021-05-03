@@ -61,6 +61,24 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-track{
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+	background: rgba(0, 0, 0, 0.4);
+	border-radius: 15px;
+	transition: 0.5s;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background: rgba(0, 0, 0, 0.6);
+}
+
 body {
 	overflow-x: hidden!important;
 	position: relative;

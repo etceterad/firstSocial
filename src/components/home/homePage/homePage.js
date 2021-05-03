@@ -4,6 +4,8 @@ import OurAchievments from '../ourAchievments';
 import OurServices from '../../ourServices';
 import DoneProjects from '../doneProjects';
 import DoneProjectsSlider from '../doneProjectsSlider';
+import { Scrollbars } from 'react-custom-scrollbars';
+
 // import DoneProjects from '../doneProjects';
 import WOW from 'wowjs';
 import OurTestimonials from '../ourTestimonials';
