@@ -18,10 +18,23 @@ export default class Offer extends React.Component {
             modalActive: false,
             user: {},
             onLoad: true,
-            onError: false
+            onError: false,
+            price: null,
+            number: 0
          }
 
          this.resetActive = this.resetActive.bind(this)
+         this.handleNumberInput = this.handleNumberInput.bind(this)
+    }
+
+    handleNumberInput(e) {
+        this.setState({
+            number: e.target.value.replace(/[^0-9]/ig, ''),
+        })
+        setTimeout(() => this.setState({
+            price: this.state.number / 10
+        }))
+        console.log(this.state.number)
     }
 
     toggleTabs(index, e) {
@@ -71,7 +84,7 @@ export default class Offer extends React.Component {
         this.tikTokApi.getUserInfo(e, username)
             .then(this.onUserLoaded)
             .catch(this.errorCatcher)
-    }  
+    }   
 
     render() {
         const {user, posts} = this.state.user;
@@ -109,6 +122,9 @@ export default class Offer extends React.Component {
                             imageClass="main-form__tab-img wow fadeInRight"
                             activateModal={(e) => this.activateModal(e)}   
                             runPost={(e, state) => this.loadProfileInfo(e, state)}
+                            price={this.state.price}
+                            numberInput={(e) => this.handleNumberInput(e)}
+                            number={this.state.number}
                         />
                         <OfferTabsItem 
                             tabsImg={OfferLikesImg}
@@ -118,6 +134,9 @@ export default class Offer extends React.Component {
                             imageClass="main-form__tab-img likes-img wow fadeInRight"
                             activateModal={(e) => this.activateModal(e)}
                             runPost={(e, state) => this.loadProfile(e, state)}                    
+                            price={this.state.price}
+                            numberInput={(e) => this.handleNumberInput(e)}
+                            number={this.state.number}
                         />
                         <OfferTabsItem 
                             tabsImg={OfferViewsImg}
@@ -126,7 +145,10 @@ export default class Offer extends React.Component {
                             tabsToggleClass={this.state.toggleState === 3 ? "main-form__tab active-tab" : "main-form__tab"}    
                             imageClass="main-form__tab-img views-img wow fadeInRight"      
                             activateModal={(e) => this.activateModal(e)}
-                            runPost={(e, state) => this.loadProfile(e, state)}           
+                            runPost={(e, state) => this.loadProfile(e, state)}     
+                            price={this.state.price} 
+                            numberInput={(e) => this.handleNumberInput(e)}
+                            number={this.state.number}
                         />
                     </div>
                     <OfferModal
@@ -138,6 +160,7 @@ export default class Offer extends React.Component {
                         errorHandler={this.state.onError}
                         activeTabId={this.state.toggleState}
                         userInput={this.state.user}
+                        price={this.state.price}
                     />
                     </div>
                 </section>

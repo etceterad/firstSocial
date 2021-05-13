@@ -9,11 +9,10 @@ export default class OfferTabsItem extends React.Component {
 
         this.state = {
             firstName: {},
-            desiredNumber: ""
+            desiredNumber: " "
         }
 
         this.handleInputLoginChange = this.handleInputLoginChange.bind(this)
-        this.handleInputDesiredNumberChange = this.handleInputDesiredNumberChange.bind(this)
     }
 
     handleInputLoginChange(e) {
@@ -23,15 +22,8 @@ export default class OfferTabsItem extends React.Component {
         console.log("Input: " + e.target.value)
     }
 
-    handleInputDesiredNumberChange(e) {
-        this.setState({
-            desiredNumber: e.target.value.replace(/[^0-9]/ig, '')
-        })
-        console.log(this.state.desiredNumber);
-    }
-
     render() {
-        const {tabsImg, formTitle, placeholderValue, tabsToggleClass, imageClass, activateModal, runPost} = this.props;
+        const {price, tabsImg, formTitle, placeholderValue, tabsToggleClass, imageClass, activateModal, runPost, numberInput, number} = this.props;
 
         return(
             <div className={tabsToggleClass}>
@@ -40,15 +32,34 @@ export default class OfferTabsItem extends React.Component {
                         {formTitle}
                     </h3>
                     <form >
-                        <input type="text" className="main-form__input" onChange={this.handleInputLoginChange} placeholder="Your TIK-TOK Login" />
-                        <input type="text" className="main-form__input" onChange={this.handleInputDesiredNumberChange} placeholder={"Number of desired " + placeholderValue} /><br/>
+                        <input 
+                            type="text" 
+                            className="main-form__input" 
+                            required 
+                            onChange={this.handleInputLoginChange} 
+                            placeholder="Your TIK-TOK Login" 
+                        />
+                        <input 
+                            type="text" 
+                            className={(this.state.desiredNumber).length === 0 ? "main-form__input touched-input" : "main-form__input"} 
+                            required 
+                            onChange={numberInput} 
+                            placeholder={"Number of desired " + placeholderValue} 
+                        /><br/>
                         <div className="main-form__calculated-area">
                             <div className="calculated-area__button" onClick={(e) => runPost(e, this.state.firstName)}>
-                                <button type="submit" onClick={activateModal} className="button form-button">BUY</button>
+                                <button 
+                                    type="submit" 
+                                    onClick={activateModal} 
+                                    disabled={number === 0 || number === "" } 
+                                    className="button form-button"
+                                >
+                                    BUY
+                                </button>
                             </div>   
                             <div className="calculated-area__price">
                                 <label htmlFor="calculated-price">Price:</label>
-                                <output id="calculated-price">49$</output>
+                                <output id="calculated-price">{price}$</output>
                             </div>
                         </div>
                     </form>

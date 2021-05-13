@@ -17,6 +17,7 @@ import PasswordResetPage from '../passwordReset/passwordResetPage';
 import SearchProfilePage from '../searchProfile/searchProfilePage';
 import AccountPage from '../account/accountPage';
 import ScrollToTop from '../scrollToTop';
+import PaymentContainer from '../paymentContainer';
 // css files
 import '../../css/style.css';
 import '../../css/all.min.css';
