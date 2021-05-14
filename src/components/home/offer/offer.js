@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollToBottom from 'react-scroll-to-bottom';
 import OfferTabsItem from '../offerTabsItem';
 import Background13 from './images/13.png';
 import TikTokApi from '../../../services'
@@ -55,7 +56,7 @@ export default class Offer extends React.Component {
         this.setState({
             modalActive: false,
             onLoad: true,
-            onError: false
+            onError: false,
         })
     }
 
@@ -151,17 +152,19 @@ export default class Offer extends React.Component {
                             number={this.state.number}
                         />
                     </div>
-                    <OfferModal
-                        resetActive={this.resetActive}
-                        active={this.state.modalActive} 
-                        onLoad={this.state.onLoad}
-                        userInfo={user}
-                        posts={posts}
-                        errorHandler={this.state.onError}
-                        activeTabId={this.state.toggleState}
-                        userInput={this.state.user}
-                        price={this.state.price}
-                    />
+                    <ScrollToBottom >
+                        <OfferModal
+                            resetActive={this.resetActive}
+                            active={this.state.modalActive} 
+                            onLoad={this.state.onLoad}
+                            userInfo={user}
+                            posts={posts}
+                            errorHandler={this.state.onError}
+                            activeTabId={this.state.toggleState}
+                            userInput={this.state.user}
+                            price={this.state.price}
+                        />
+                    </ScrollToBottom>
                     </div>
                 </section>
             </div>

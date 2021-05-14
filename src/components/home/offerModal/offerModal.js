@@ -16,6 +16,7 @@ export default class OfferModal extends React.Component{
             swapToPayment: false,
             disabled: true
         }
+        this.modalRef = React.createRef();
 
         this.handleCheckboxArgeementInput = this.handleCheckboxArgeementInput.bind(this);
         this.onSelectId = this.onSelectId.bind(this)
@@ -63,6 +64,10 @@ export default class OfferModal extends React.Component{
                 })
             }
         }
+        this.modalRef.scrollTo({
+            top: 1000,
+            behavior: 'smooth'  
+        })
     }
 
     handleCheckboxArgeementInput(e) {
@@ -93,7 +98,7 @@ export default class OfferModal extends React.Component{
 
         return(
             <div className={active ? "modal active" : "modal"} style={{position: "relative"}} onClick={resetActive} >
-                <div className="purchase-popup offer" onClick={e => e.stopPropagation()}>
+                <div className="purchase-popup offer" onClick={e => e.stopPropagation()} ref={(ref) => this.modalRef=ref} >
                     {this.state.swapToPayment ?
                             <div>
                                 <a href="  " style={{opacity: '0.7', fontSize:'13px', position: 'absolute', top: '1%', left: '3%'}} onClick={(e) => this.backToModal(e)}>-Back</a>
@@ -258,7 +263,6 @@ class UserProfile extends React.Component {
         this.state = {
             activeId: 0
         }
-
     }
 
     selectId = async (aweme) => {

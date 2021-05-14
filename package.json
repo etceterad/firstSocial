@@ -32,6 +32,7 @@
     "react-owl-carousel": "^2.3.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-scroll-to-bottom": "^4.1.1",
     "react-smooth-scrollbar": "^8.0.6",
     "react-tooltip": "^4.2.17",
     "react-transition-group": "^4.4.1",
