@@ -147,7 +147,7 @@ export default class OfferModal extends React.Component{
                                                 <label className="purchase-popup__form-label" for="purchase-popup-checkbox">I accept the user agreement</label><br />
                                                 <button 
                                                     className="purchase-popup__form-button button" 
-                                                    disabled={this.state.timeId === 0 && this.state.checkboxAgreement === false} 
+                                                    disabled={this.state.timeId === 0 || !this.state.checkboxAgreement || this.props.errorHandler} 
                                                     onClick={(e) => this.props.handleSwap(e)} 
                                                 >
                                                     Purchase
