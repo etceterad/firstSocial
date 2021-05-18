@@ -11,16 +11,19 @@ export default class PricingList extends React.Component{
         this.state = {
             modalActive: false,
             nameActive: "",
-            priceActive: ""
+            priceActive: "",
+            swapToPayment: false
         }
 
         this.activateModal = this.activateModal.bind(this);
         this.resetActive = this.resetActive.bind(this);
+        this.hanldeSwap = this.hanldeSwap.bind(this);
     }
 
     resetActive() {
         this.setState({
-            modalActive: false
+            modalActive: false,
+            swapToPayment: false
         })
     }
 
@@ -31,6 +34,14 @@ export default class PricingList extends React.Component{
             priceActive: price
         });
         e.preventDefault();
+    }
+
+    hanldeSwap(e) {
+        e.preventDefault()
+
+        this.setState({
+            swapToPayment: true
+        })
     }
 
     render() {
@@ -108,7 +119,10 @@ export default class PricingList extends React.Component{
                 </div>
             <PricingModal
                 resetActive={this.resetActive}
+                swapperHandle={(e) => this.hanldeSwap(e)}
+                swapToPayment={this.state.swapToPayment}
                 active={this.state.modalActive}
+                amount={this.state.priceActive}
                 name={this.state.nameActive}
                 price={this.state.priceActive}
             />

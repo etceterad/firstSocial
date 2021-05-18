@@ -1,38 +1,49 @@
 import React from 'react'
+import { Formik } from 'formik'
+import * as yup from 'yup'
 
-export default class PasswordResetMain extends React.Component {
-    constructor(props) {
-        super(props);
+const PasswordResetMain = () => {
+    const validation = yup.object().shape({
+        email: yup.string().email('Input valid email').required('Required')
+    })
 
-        this.state = {
-            email: " "
-        }
-
-        this.emailHandler = this.emailHandler.bind(this)
-    }
-
-    emailHandler(e) {
-        this.setState({
-            email: e.target.value
-        })
-        console.log(this.state.email)
-    }
-
-    render() {
-        return(
-            <div className="login-info">
-                <h2 className="iq-fw-8 mb-3">Reset Password</h2>
-                <h6>Please enter your email address to request a password reset.</h6>
-                <form>
-                    <div className="form-group">
-                    <input type="email" className="form-control" onChange={this.emailHandler} placeholder="Email Address" />
-                    </div>
-                    <a className="slide-button button mr-3" href="password-reset.html">
-                        <div className="first">Reset Password</div>
-                        <div className="second">Reset Password</div>
-                    </a>
-                </form>
-            </div>
-        )
-    }
+    return(
+        <div className="login-info">
+            <h2 className="iq-fw-8 mb-3">Reset Password</h2>
+            <h6>Please enter your email address to request a password reset.</h6>
+            <Formik
+                initialValues={{
+                    email: ''
+                }}
+                validateOnBlur
+                onSubmit={values => console.log(values)}
+                validationSchema={validation}
+            >
+                {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
+                    <form>
+                        <div className="form-group">
+                        <input 
+                            type="email" 
+                            name="email"
+                            className={touched.email ? errors.email ? "form-control contact-first-name touched-input" : "form-control contact-first-name" : "form-control contact-first-name"} 
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.email} 
+                            placeholder="Email Address" 
+                        />
+                        </div>
+                        <button 
+                            className="slide-button button mr-3 login-button" 
+                            onClick={handleSubmit}
+                            disabled={!isValid && !dirty}
+                        >
+                            Reset Password
+                        </button>
+                    </form>
+                )}
+            </Formik>       
+        </div>
+    )
 }
+
+export default PasswordResetMain;

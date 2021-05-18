@@ -1,5 +1,4 @@
 import React from 'react';
-import ScrollToBottom from 'react-scroll-to-bottom';
 import OfferTabsItem from '../offerTabsItem';
 import Background13 from './images/13.png';
 import TikTokApi from '../../../services'
@@ -21,9 +20,12 @@ export default class Offer extends React.Component {
             onLoad: true,
             onError: false,
             price: null,
-            number: 0
+            number: 0,
+            disabled: true,
+            swapToPayment: false
          }
 
+         this.handleSwap = this.handleSwap.bind(this)
          this.resetActive = this.resetActive.bind(this)
          this.handleNumberInput = this.handleNumberInput.bind(this)
     }
@@ -57,8 +59,16 @@ export default class Offer extends React.Component {
             modalActive: false,
             onLoad: true,
             onError: false,
+            disabled: true,
+            swapToPayment: false
         })
-    }
+
+        // setTimeout(() => {
+        //     this.setState({
+        //         swapToPayment: false
+        //     })
+        // }, 800)
+    }   
 
     errorCatcher = async () => {
          this.setState({
@@ -85,7 +95,39 @@ export default class Offer extends React.Component {
         this.tikTokApi.getUserInfo(e, username)
             .then(this.onUserLoaded)
             .catch(this.errorCatcher)
-    }   
+    }
+
+    handleSwap(e) {
+        e.preventDefault()
+
+        this.setState({
+            swapToPayment: true
+        })
+    }
+    
+    showItem(modalRef) {
+        if(this.state.toggleState === 2 || this.state.toggleState === 3) {
+            if(this.state.selectedId === 0) {
+                this.setState({
+                    disabled: true
+                })
+            } else {
+                this.setState({
+                    disabled: false
+                })
+            }
+        } else { 
+            if(this.state.toggleState === 1) {
+                this.setState({
+                    disabled: false
+                })
+            }
+        }
+        modalRef.scrollTo({
+            top: 4000,
+            behavior: 'smooth'  
+        })
+    }
 
     render() {
         const {user, posts} = this.state.user;
@@ -108,9 +150,45 @@ export default class Offer extends React.Component {
                             <div className="row">
                                 <div className="col-sm-12">
                                     <ul className="about-us text-center list-inline">
-                                        <li className="list-inline-item"><a href=" " onClick={(e) => this.toggleTabs(1, e)} className={this.state.toggleState === 1 ? "active" : ""}><span>Subscribers</span></a></li>
-                                        <li className="list-inline-item"><a href=" " onClick={(e) => this.toggleTabs(2, e)} className={this.state.toggleState === 2 ? "active" : ""}><span>Likes</span></a></li>
-                                        <li className="list-inline-item"><a href=" " onClick={(e) => this.toggleTabs(3, e)} className={this.state.toggleState === 3 ? "active" : ""}><span>Views</span></a></li>
+                                        <li 
+                                            className="list-inline-item"
+                                        >
+                                            <a 
+                                                href=" " 
+                                                onClick={(e) => this.toggleTabs(1, e)} 
+                                                className={this.state.toggleState === 1 ? "active" : ""}
+                                            >
+                                                <span>
+                                                    Subscribers
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li 
+                                            className="list-inline-item"
+                                        >
+                                            <a 
+                                                href=" " 
+                                                onClick={(e) => this.toggleTabs(2, e)} 
+                                                className={this.state.toggleState === 2 ? "active" : ""}
+                                            >
+                                                <span>
+                                                    Likes
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li 
+                                            className="list-inline-item"
+                                        >
+                                            <a 
+                                                href=" " 
+                                                onClick={(e) => this.toggleTabs(3, e)} 
+                                                className={this.state.toggleState === 3 ? "active" : ""}
+                                            >
+                                                <span>
+                                                    Views
+                                                </span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -152,9 +230,12 @@ export default class Offer extends React.Component {
                             number={this.state.number}
                         />
                     </div>
-                    <ScrollToBottom >
                         <OfferModal
-                            resetActive={this.resetActive}
+                            resetActive={() => this.resetActive(this.state.disabled)}
+                            showItem={(modalRef) => this.showItem(modalRef)}
+                            disabledItem={this.state.disabled}
+                            handleSwap={(e) => this.handleSwap(e)}
+                            swapperState={this.state.swapToPayment}
                             active={this.state.modalActive} 
                             onLoad={this.state.onLoad}
                             userInfo={user}
@@ -163,8 +244,8 @@ export default class Offer extends React.Component {
                             activeTabId={this.state.toggleState}
                             userInput={this.state.user}
                             price={this.state.price}
+                            number={this.state.number}
                         />
-                    </ScrollToBottom>
                     </div>
                 </section>
             </div>

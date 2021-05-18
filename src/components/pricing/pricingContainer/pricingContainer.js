@@ -1,18 +1,18 @@
 import { Elements } from "@stripe/react-stripe-js"
 import { loadStripe } from "@stripe/stripe-js"
 import React from "react"
-import PaymentCheckout from "../paymentCheckout"
+import PricingCheckout from '../pricingCheckout';
 
 const PUBLIC_KEY = "pk_test_TYooMQauvdEDq54NiTphI7jx"
 
 const stripeTestPromise = loadStripe(PUBLIC_KEY)
 
 const StripeContainer = (props) => {
-    const { amount, activeTabId, number } = props;
+    const { amount, name } = props;
 
 	return (
 		<Elements stripe={stripeTestPromise}>
-			<PaymentCheckout amount={amount} activeTabId={activeTabId} number={number} resetActive={props.resetActive} />
+			<PricingCheckout amount={amount} resetActive={props.resetActive} name={name} />
 		</Elements> 
 	)
 }

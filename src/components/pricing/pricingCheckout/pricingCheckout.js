@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Formik, Field } from 'formik';
 import * as yup from 'yup';
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js"
-import SucceededImg from '../../images/success.svg'
+import SucceededImg from '../../../images/success.svg'
 
 const CARD_OPTIONS = {
     style: {
@@ -23,19 +23,14 @@ const CARD_OPTIONS = {
     }
   };
 
-const PaymentCheckout = (props) =>  {
+const PricingCheckout = (props) =>  {
     const [succeeded, setSucceeded ] = useState(false)
     const [error, setError] = useState(null);
     const [processing, setProcessing] = useState('');
     const [disabled, setDisabled] = useState(true);
-    const { amount, activeTabId } = props;
+    const { amount } = props;
     const stripe = useStripe()
     const elements = useElements()
-
-    const validation = yup.object().shape({
-        name: yup.string().typeError('Must be string').required("Required"),
-        email: yup.string().email('Input valid email').required('Required')
-    })
 
     const handleSubmitNative = async (e) => {
         e.preventDefault()
@@ -109,7 +104,7 @@ const PaymentCheckout = (props) =>  {
                             <p 
                                 className="product-info__text"
                             >
-                                {props.number} {activeTabId === 1 ? "Subscribers" : activeTabId === 2 ? "Likes" : "Views"}
+                                {props.name}
                             </p>
                         </div>
                         <div className="payment-product__price">
@@ -121,34 +116,13 @@ const PaymentCheckout = (props) =>  {
                 </div>
                 <Formik
                     initialValues={{
-                        name: '',
-                        email: '',
                         check: false
                     }}
                     validateOnBlur
                     onSubmit={values => console.log(values)}
-                    validationSchema={validation}
                 >
-                {({ values, errors, touched, handleChange, handleBlur, isValid, dirty }) => (
+                {({ values, isValid, dirty }) => (
                     <form id="payment-form" onSubmit={handleSubmitNative}>
-                        <input 
-                            type="text" 
-                            className={touched.name ? errors.name ? "form-control contact-first-name touched-input" : "form-control contact-first-name" : "form-control contact-first-name"} 
-                            placeholder="Your name" 
-                            name="name"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={values.name} 
-                        />
-                        <input 
-                            type="email" 
-                            className={touched.email ? errors.email ? "form-control contact-email touched-input" : "form-control contact-email" : "form-control contact-email"} 
-                            placeholder="Email" 
-                            name="email"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={values.email}
-                        /><br />
                         <label>
                             <Field
                                 type="checkbox"
@@ -186,4 +160,4 @@ const PaymentCheckout = (props) =>  {
     )
 }
 
-export default PaymentCheckout;
+export default PricingCheckout;

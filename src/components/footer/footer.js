@@ -13,7 +13,7 @@ function Footer()  {
   })
 
   return (
-      <footer className="footer-one footer-bg  position-relative">
+    <footer className="footer-one footer-bg  position-relative">
       <img src={FourthImg} className="img-fluid fshap-after" alt="footer" />
       <div className="iq-subscribe pattern-left  container position-relative" id="iq-subscribe">
         <div className="pattern-right">

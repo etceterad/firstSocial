@@ -20,16 +20,7 @@ export default class OfferModal extends React.Component{
 
         this.handleCheckboxArgeementInput = this.handleCheckboxArgeementInput.bind(this);
         this.onSelectId = this.onSelectId.bind(this)
-        this.handleSwap = this.handleSwap.bind(this)
         this.backToModal = this.backToModal.bind(this)
-    }
-
-    handleSwap(e) {
-        e.preventDefault()
-
-        this.setState({
-            swapToPayment: true
-        })
     }
 
     backToModal(e) {
@@ -43,30 +34,6 @@ export default class OfferModal extends React.Component{
     setListItemId(id) {
         this.setState({
             timeId: id
-        })
-    }
-
-    showItem(activeTabId) {
-        if(activeTabId === 2 || activeTabId === 3) {
-            if(this.state.selectedId === 0) {
-                this.setState({
-                    disabled: true
-                })
-            } else {
-                this.setState({
-                    disabled: false
-                })
-            }
-        } else { 
-            if(activeTabId === 1) {
-                this.setState({
-                    disabled: false
-                })
-            }
-        }
-        this.modalRef.scrollTo({
-            top: 1000,
-            behavior: 'smooth'  
         })
     }
 
@@ -85,24 +52,39 @@ export default class OfferModal extends React.Component{
     }
 
     render() {
-        const {resetActive, active, userInfo, posts, activeTabId, price} = this.props;
+        const {resetActive, active, userInfo, posts, activeTabId, price, number, showItem} = this.props;
 
         const ProfileData = this.props.onLoad ? <Spinner /> : <UserProfile 
                                                                 user={userInfo} 
                                                                 posts={posts} 
                                                                 onSelectedId={(aweme_id) => this.onSelectId(aweme_id)} 
                                                                 activeTabId={activeTabId} 
-                                                                showInfo={() => this.showItem(activeTabId)} 
+                                                                showInfo={() => showItem(this.modalRef)} 
                                                             />;
         const ErrorShow = this.props.errorHandler ? <ErrorMessage /> : null;
 
         return(
-            <div className={active ? "modal active" : "modal"} style={{position: "relative"}} onClick={resetActive} >
+            <div 
+                className={active ? "modal active" : "modal"} 
+                style={{position: "relative"}} 
+                onClick={() => resetActive(this.state.disabled)} 
+            >
                 <div className="purchase-popup offer" onClick={e => e.stopPropagation()} ref={(ref) => this.modalRef=ref} >
-                    {this.state.swapToPayment ?
+                    {this.props.swapperState ?
                             <div>
-                                <a href="  " style={{opacity: '0.7', fontSize:'13px', position: 'absolute', top: '1%', left: '3%'}} onClick={(e) => this.backToModal(e)}>-Back</a>
-                                <PaymentContainer amount={price}/>
+                                <a 
+                                    href="  " 
+                                    style={{opacity: '0.7', fontSize:'13px', position: 'absolute', top: '1%', left: '3%'}} 
+                                    onClick={(e) => this.backToModal(e)}
+                                >
+                                    -Back
+                                </a>
+                                <PaymentContainer 
+                                    resetActive={resetActive}
+                                    amount={price} 
+                                    activeTabId={activeTabId} 
+                                    number={number}
+                                />
                             </div>
                         :
                             <div>
@@ -115,7 +97,7 @@ export default class OfferModal extends React.Component{
                                     ?
                                         <div>
                                             <h2 className="purchase-popup__title">
-                                            Select speed
+                                                Select speed
                                             </h2> 
                                             <div className="offer-modal__select-time">
                                                 <ul className="select-time__list">
@@ -166,15 +148,16 @@ export default class OfferModal extends React.Component{
                                                 <button 
                                                     className="purchase-popup__form-button button" 
                                                     disabled={this.state.timeId === 0 && this.state.checkboxAgreement === false} 
-                                                    onClick={(e) => this.handleSwap(e)} 
+                                                    onClick={(e) => this.props.handleSwap(e)} 
                                                 >
                                                     Purchase
                                                 </button>
                                                 </form>
                                             </div>
                                         </div>
-                                    : this.state.disabled ?
-                                            <div className="no-posts" style={{width: '0', height:'0'}}></div>
+                                        : 
+                                            this.props.disabledItem ?
+                                                <div className="no-posts" style={{width: '0', height:'0'}}></div>
                                         :
                                         <div>
                                             <h2 className="purchase-popup__title">
@@ -229,7 +212,7 @@ export default class OfferModal extends React.Component{
                                                 <button 
                                                     className="purchase-popup__form-button button" 
                                                     disabled={this.state.timeId === 0 && this.state.checkboxAgreement === false} 
-                                                    onClick={(e) => this.handleSwap(e)} 
+                                                    onClick={(e) => this.props.handleSwap(e)} 
                                                 >
                                                     Purchase
                                                 </button>

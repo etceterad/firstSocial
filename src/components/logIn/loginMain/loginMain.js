@@ -1,67 +1,79 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { Formik, Field } from 'formik';
+import * as yup from 'yup';
 
-export default class LoginMain extends React.Component {
-    constructor(props) {
-        super(props)
+const LoginMain = () =>  {
 
-        this.state = {
-            email: "",
-            password: "",
-            checkbox: false
-        }
+    const validation = yup.object().shape({
+        email: yup.string().email('Input valid email').required('Required'),
+        pass: yup.string().typeError('Must be string').required("Required")
+    })
 
-        this.emailHandler = this.emailHandler.bind(this);
-        this.passwordHandler = this.passwordHandler.bind(this);
-        this.checkboxHandler = this.checkboxHandler.bind(this);
-    }
-
-    emailHandler(e) {
-        this.setState({
-            email: e.target.value
-        })
-    } 
-
-    passwordHandler (e) {
-        this.setState({
-            password: e.target.value
-        })
-        console.log(this.state.password)
-    }
-
-    checkboxHandler(e) {
-        this.setState({
-            checkbox: e.target.checked
-        })
-    }
-
-    render() {
-        return(
-            <div className="login-info">
-                <h2 className="iq-fw-9 mb-3">Login</h2>
-                <h6>Welcome to <span className="main-color">TikTokFans</span> please login your account.</h6>
-                <form>
-                    <div className="form-group">
-                        <input type="email" className="form-control" onChange={this.emailHandler}  placeholder="Enter Email" />
-                    </div>
-                    <div className="form-group">
-                        <input type="password" className="form-control" onChange={this.passwordHandler} placeholder="Password" />
-                    </div>
-                    <div className="form-group form-check mb-4">
-                        <input type="checkbox" className="form-check-input" onChange={this.checkboxHandler} checked={this.state.checkbox} id="exampleCheck1"/>
-                        <label className="form-check-label" for="exampleCheck1">Check me out</label>
-                        <Link to="/password-reset" className="float-right iq-fw-6">Forgot Password</Link>
-                    </div>
-                    <a className="slide-button button mr-3" href="/login">
-                        <div className="first">Login</div>
-                        <div className="second">Login</div>
-                    </a>
-                    <Link className="slide-button button bt-border" to="/register">
-                        <div className="first">Register</div>
-                        <div className="second">Register</div>
-                    </Link>
-                </form>
-            </div>
-        )
-    }
+    return(
+        <div className="login-info">
+            <h2 className="iq-fw-9 mb-3">Login</h2>
+            <h6>Welcome to <span className="main-color">TikTokFans</span> please login your account.</h6>
+            <Formik
+                initialValues={{
+                    email: '',
+                    pass: '',
+                    check: false
+                }}
+                validateOnBlur
+                onSubmit={values => console.log(values)}
+                validationSchema={validation}
+            >
+                {({ values, errors, touched, handleChange, handleBlur, isValid, dirty }) => (
+                    <form>
+                        <div className="form-group">
+                            <input 
+                                type="email" 
+                                className={touched.email ? errors.pass ? "form-control contact-first-name touched-input" : "form-control contact-first-name" : "form-control contact-first-name"} 
+                                placeholder="Enter Email"
+                                name="email" 
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.email}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input 
+                                type="password" 
+                                className={touched.pass ? errors.pass ? "form-control contact-first-name touched-input" : "form-control contact-first-name" : "form-control contact-first-name"}
+                                placeholder="Password"
+                                name="pass"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.pass} 
+                            />
+                        </div>
+                        <div className="form-group form-check mb-4">
+                            <label>
+                                <Field 
+                                    type="checkbox" 
+                                    name="check"
+                                />
+                            </label>                           
+                            <label className="form-check-label" for="exampleCheck1">Check me out</label>
+                            <Link to="/password-reset" className="float-right iq-fw-6">Forgot Password</Link>
+                        </div>
+                        <button  
+                            className="slide-button button mr-3 login-button" 
+                            href="/login"
+                            disabled={!isValid || !dirty || !values.check}
+                        >
+                            Login
+                        </button>
+                        <Link className="slide-button button bt-border" to="/register">
+                            <div className="first">Register</div>
+                            <div className="second">Register</div>
+                        </Link>
+                    </form>
+                ) }
+            </Formik>
+        </div>
+    )
 }
+
+export default LoginMain;
