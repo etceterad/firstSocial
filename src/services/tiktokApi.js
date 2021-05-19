@@ -1,12 +1,12 @@
 export default class TikTokApi {
   constructor() {
-    this._apiBase = "http://linuxtech.io:5000/search_user"
+    this._apiBase = "https://linuxtech.io:5000/search_user"
   }
 
   getUserPosts = async (e, username) => {
     e.preventDefault();
 
-    const response = await fetch('http://linuxtech.io:5000/search_user', {
+    const response = await fetch('https://linuxtech.io:5000/search_user', {
       method: "POST",
       headers: {
         'Accept': 'application/json, */*; q=0.01',
@@ -19,7 +19,7 @@ export default class TikTokApi {
     });
     
     if(!response.ok) {
-      console.error(`Ошибка по адресу http://linuxtech.io:5000/search_user`)
+      console.error(`Ошибка по адресу https://linuxtech.io:5000/search_user`)
     };
 
     return await response.json();
@@ -28,7 +28,7 @@ export default class TikTokApi {
   getUserInfo = async (e, username) => {
     e.preventDefault();
 
-    const response = await fetch('http://linuxtech.io:5000/search_user', {
+    const response = await fetch('https://linuxtech.io:5000/search_user', {
       method: "POST",
       headers: {
         'Accept': 'application/json, */*; q=0.01',
@@ -41,7 +41,7 @@ export default class TikTokApi {
     });
     
     if(!response.ok) {
-      console.error(`Ошибка по адресу http://linuxtech.io:5000/search_user`)
+      console.error(`Ошибка по адресу https://linuxtech.io:5000/search_user`)
     };
 
     return await response.json();

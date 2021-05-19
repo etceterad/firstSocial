@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Formik, Field } from 'formik';
-import * as yup from 'yup';
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js"
 import SucceededImg from '../../../images/success.svg'
 

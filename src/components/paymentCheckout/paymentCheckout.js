@@ -98,7 +98,7 @@ const PaymentCheckout = (props) =>  {
                     Stripe dashboard.
                     </a> Refresh the page to pay again.
                 </p>
-                <img src={SucceededImg} className="success-img" alt="" />
+                <img src={SucceededImg} className="success-img" alt=" " />
             </div>
             :
             <div>

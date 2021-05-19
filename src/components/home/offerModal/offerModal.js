@@ -144,7 +144,7 @@ export default class OfferModal extends React.Component{
                                                     checked={this.state.checkboxAgreement} 
                                                     id="purchase-popup-checkbox"
                                                 />
-                                                <label className="purchase-popup__form-label" for="purchase-popup-checkbox">I accept the user agreement</label><br />
+                                                <label className="purchase-popup__form-label" htmlFor="purchase-popup-checkbox">I accept the user agreement</label><br />
                                                 <button 
                                                     className="purchase-popup__form-button button" 
                                                     disabled={this.state.timeId === 0 || !this.state.checkboxAgreement || this.props.errorHandler} 
@@ -161,7 +161,7 @@ export default class OfferModal extends React.Component{
                                         :
                                         <div>
                                             <h2 className="purchase-popup__title">
-                                            Select speed
+                                                Select speed
                                             </h2> 
                                             <div className="offer-modal__select-time">
                                                 <ul className="select-time__list">
@@ -208,10 +208,10 @@ export default class OfferModal extends React.Component{
                                                     checked={this.state.checkboxAgreement} 
                                                     id="purchase-popup-checkbox"
                                                 />
-                                                <label className="purchase-popup__form-label" for="purchase-popup-checkbox">I accept the user agreement</label><br />
+                                                <label className="purchase-popup__form-label" htmlFor="purchase-popup-checkbox">I accept the user agreement</label><br />
                                                 <button 
                                                     className="purchase-popup__form-button button" 
-                                                    disabled={this.state.timeId === 0 && this.state.checkboxAgreement === false} 
+                                                    disabled={this.state.timeId === 0 && !this.state.checkboxAgreement} 
                                                     onClick={(e) => this.props.handleSwap(e)} 
                                                 >
                                                     Purchase
@@ -221,7 +221,6 @@ export default class OfferModal extends React.Component{
                                         </div>
                                 }
                             </div>    
-                                     
                     }
                 </div>
             </div>
@@ -230,7 +229,7 @@ export default class OfferModal extends React.Component{
 }
 
 
-const ErrorMessage = (props) => {
+const ErrorMessage = () => {
     return(
         <div className="error-container">
             <p className="error-text">Seems like this TikTok account haven't any posts yet...</p>
@@ -277,8 +276,7 @@ class UserProfile extends React.Component {
                         >
                             <img 
                                 src={cover} 
-                                alt=" " 
-                                // onClick={this.props.showInfo} 
+                                alt=" "  
                                 className={this.state.activeId === aweme_id ? "selected posts-img" : "posts-img"}  
                             />
                         </Grid>
